@@ -1,0 +1,130 @@
+
+// === Variables =====
+$perspective:     60rem;
+$font-size:       4.25rem;
+$split-position:  49%;
+$split-thickness: 4px;
+$split-color:     #FF2C75;
+
+.visible{
+opacity: 0;
+}
+
+
+
+// === Settings =====
+%font-settings {
+  font-family: "Gilroy ExtraBold", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  // -webkit-font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+// === Codepen Setup =====
+// html,
+// body {
+//   width: 100vw;
+//   height: 100vh;
+// }
+.Menu {
+  @extend %font-settings;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #02001F,#1F1B4E);
+  // transform-style: preserve-3d;
+  transform: perspective($perspective);
+  // position: fixed;
+  // display: flex;
+  align-items: center;
+  height: 100%;
+  z-index: 999;
+  justify-content: center; 
+
+}
+
+.trans{
+  transition: all 1s ease;
+}
+
+// === Menu <ul> =====
+.Menu-list {
+  z-index: 9999;
+  
+  font-size: $font-size;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotateX(-30deg) rotateY(20deg); // overwritten by JS
+}
+
+// === Menu item =====
+.Menu-list-item {
+  position: relative;
+  color: transparent;
+  cursor: pointer;
+  
+  // === Split Line =====
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $split-position;
+    left: -10%;
+    right: -10%;
+    height: $split-thickness;
+    border-radius: $split-thickness;
+    margin-top: -($split-thickness / 2);
+    background: $split-color;
+    transform: scale(0);
+    transition: transform .8s cubic-bezier(.16,1.08,.38,.98);
+    z-index: 1;
+  }
+}
+
+
+
+// === Top/bottom mask =====
+.Mask {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: $split-color;
+  top: 0;
+  height: $split-position;
+  transition: all .8s cubic-bezier(.16,1.08,.38,.98);
+  
+  span { display: block; }
+}
+
+// === Bottom mask specific =====*******
+.Mask + .Mask {
+  top: $split-position - 0.1;
+  height: 100 - $split-position + 0.1;
+  
+  span { transform: translateY(-$split-position); }
+}
+
+// === Where the fun stuff happens =====
+.Menu-list-item:hover,
+.Menu-list-item:active {
+  .Mask { color: #FFF; transform: skewX(12deg) translateX(5px); }
+  .Mask + .Mask { transform: skewX(12deg) translateX(-5px); }
+  &::before { transform: scale(1); }
+}
+
+.close{
+  color: #fff;
+}
+
+.btnKlient:hover{
+  color: #fff;
+  background-color:  #FF2C75;
+}

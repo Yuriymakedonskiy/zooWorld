@@ -1,0 +1,202 @@
+{% load static %}
+{% load sass_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+            <link rel="stylesheet prefetch"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.standalone.css">
+<link href="{% sass_src './EtalonSite/css/base.scss' %}" rel="stylesheet" type="text/css"/>
+  
+    <title>EtalonTrans</title>
+</head>
+<body>
+<style>
+  body{
+   background-color: #F5F5F5;
+  }
+.footer{
+  background-color: #181818;
+  color: #fff;
+  padding: 40px 20px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.footer h2{
+  font-size: 20px;
+}
+.footer h4{
+  font-size: 16px;
+  color: #8d8d8d;
+}
+
+.footer-Email{
+  background-color: #181818;
+  border: none;
+  color: #fff;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+    border-bottom: 1px solid #8d8d8d;
+}
+.footer-Email:placeholder-shown{
+  padding-left: 15px;
+  padding-bottom: 15px;
+	/* background: right 5% / 15% 60% no-repeat url("https://css.gg/arrow-bottom-right.svg");	 */
+	background: right 51% / 30% 60% no-repeat url("/static/EtalonSite/arrow-bottom-right.svg");	
+}
+
+
+</style>
+
+    
+        
+        <div class="Menu visible">
+            <ul class="Menu-list" data-offset="10">
+              <li class="Menu-list-item" data-offset="20" onclick>
+                О нас
+                <span class="Mask"><span>О нас</span></span>
+                <span class="Mask"><span>О нас</span></span>
+              </li>
+              <li class="Menu-list-item" data-offset="16" onclick>
+                Контакты
+                <span class="Mask"><span>Контакты</span></span>
+                <span class="Mask"><span>Контакты</span></span>
+              </li>
+              <li class="Menu-list-item" data-offset="12" onclick>
+                Work
+                <span class="Mask"><span>Work</span></span>
+                <span class="Mask"><span>Work</span></span>
+              </li>
+              <li class="Menu-list-item" data-offset="8" onclick>
+                Contact
+                <span class="Mask"><span>Contact</span></span>
+                <span class="Mask"><span>Contact</span></span>
+              </li>
+              <hr style="border: 4px solid#ffff;width: 25%;border-radius: 20px;">
+              <li class="Menu-list-item" data-offset="8" onclick>
+                Закрыть 
+                <span class="Mask close"><span>Закрыть</span></span>
+                <span class="Mask close"><span>Закрыть</span></span>
+              </li>
+            </ul>
+          </div>
+          <div id="blue">
+            <!-- Навигационное поле -->
+            
+          
+            <nav class="site-header sticky-top  navbar navbar-expand-lg navbar-light">
+              <div class="container" style="color: #000">
+                    <div class="row">
+                        <div class="logotype">
+                            <a id="logo"
+                               class="navbar-brand col-1 col-sm-7 col-md-4 offset-1 offset-sm-1 offse4t-md-1 offset-xl-1 offset-xxl-2"
+                               href="#" style="color: #000;">
+                          Эталон-Транс
+                              </a>
+                        </div>
+                       <!-- <center class="hrBan" style="margin-bottom: 30px; margin-top: -4px"> 
+                              <hr class="divider my-1 text-center">
+                            </center> -->
+                    </div>
+                    <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="#">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Контакты</a>
+                        </li>
+                        <li class="nav-item ">
+                          <button class="btn btnKlient" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem; color: #FF2C75;border: 1px solid #FF2C75;color: #fff;background-color: #FF6912;box-shadow: 0px 0px 20px rgba(255,105,18,0.6)">Связаться</button>
+                        </li>
+                      </ul>
+                    </div>
+                  
+                    <span style="cursor:pointer;" class="navbar-toggler-icon"></span>
+                    
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+          <div class="container">
+        <center class="hrBan" style="color: #A8A8A9; margin-bottom: 30px; margin-top: -4px"> 
+               <hr class="divider my-1 text-center">
+             </center>
+        </div>
+{% block content %}
+{% endblock %}
+   
+<div class="footer">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <h2>
+        EtalonTrans
+      </h2>
+      <br>
+      <h4>
+        Lorem, ipsum dolor sit amet consectetur 
+      </h4>
+      <br>
+      <h4>
+        Copyright 2023
+      </h4>
+    </div>
+    
+    <div class="col-3">
+      <h2>
+        Компания
+      </h2>
+      <br>
+        <h4>О нас</h4>
+        <h4>Контакты</h4>
+        <h4>Лицензии</h4>
+        <h4>Карьера</h4>
+        <h4>Политика Конфиденциальности</h4>
+    </div>
+    
+    <div class="col-3">
+      <h2>
+        Компания
+      </h2>
+      <br>
+        <h4>О нас</h4>
+        <h4>Контакты</h4>
+        <h4>Лицензии</h4>
+        <h4>Карьера</h4>
+        <h4>Политика Конфиденциальности</h4>
+    </div>
+    <div class="col-3">
+      <h2>
+        Оставьте свою почту
+      </h2>
+      <br>
+        <input type="text" name="" id="" class="footer-Email" placeholder="Введите почту">
+      </div>
+  </div> 
+</div>
+
+</div>
+
+
+    <script src="{% static '/EtalonSite/js/paralax.js' %}"></script>
+    <!-- <link rel="stylesheet" href="https://snipp.ru/cdn/selectize.js/0.12.6/dist/css/selectize.default.css">
+<script src="https://snipp.ru/cdn/microplugin.js/src/microplugin.js"></script>
+<script src="https://snipp.ru/cdn/sifter.js/sifter.min.js"></script>
+<script src="https://snipp.ru/cdn/selectize.js/0.12.6/dist/js/selectize.min.js"></script>
+<script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/lodash/4.10.0/lodash.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
