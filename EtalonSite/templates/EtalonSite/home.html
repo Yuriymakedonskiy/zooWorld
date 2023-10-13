@@ -1,8 +1,6 @@
 {% extends 'EtalonSite/base.html' %}
 {% block content %}
 {% load static %}
-{% load sass_tags %}
-<link href="{% sass_src './EtalonSite/css/home.scss' %}" rel="stylesheet" type="text/css" />
 <style>
 	.slogan {
 		font-size: 56px;
@@ -39,7 +37,8 @@
 		background: left 5% / 15% 60% no-repeat url("https://css.gg/pin.svg");
 	}
 
-	.banner_button {
+	.banner_button-loop {
+		width: 60px;
 		background-color: #181818;
 		/* border: 3px solid #181818; */
 		/* // padding: 90px 3px; */
@@ -90,8 +89,9 @@
 
 	.bigNumbers {
 		background-color: #FCF5F3;
-		padding: 100px 0;
+		/* padding: 100px 0; */
 		/* margin: 100px 0px; */
+		margin-top: 100px;
 
 	}
 
@@ -121,6 +121,7 @@
 
 	.blockImage img {
 		opacity: 0.9;
+		margin-top: 20px;
 		width: 300px;
 		height: 320px;
 		border-radius: 45px;
@@ -215,118 +216,16 @@
 		z-index: 1;
 	}
 
-	.page__vacancy {
-		width: calc(50% - 2.1875rem);
-		margin-right: 4.375rem;
-		margin-bottom: 4.375rem;
+	@media only screen and (min-device-width: 991px) {
+		.section__img-map {
+			margin-top: -90px;
+		}
 	}
 
-
-	.vacancy-card__title {
-		font-weight: 600;
-		font-size: 1.5rem;
-		line-height: 1.75rem;
-		letter-spacing: -.035em;
-		margin-bottom: 0.9375rem;
-		margin-top: 3.9375rem;
-		font-weight: 700;
-	}
-
-	.vacancy-card__text_description {
-		color: rgba(0, 0, 0, .6);
-		margin-bottom: 1.5625rem;
-	}
-
-	.vacancy-card__text {
-		font-size: 1.125rem;
-		line-height: 1.625rem;
-		letter-spacing: -.04em;
-	}
-
-	.vacancie {
-		margin-top: -1.5625rem;
-	}
-
-	.vacancy-card__footer {
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-	}
-
-	.vacancy-card__button {
-		margin-right: 1rem;
-	}
-
-	.button_color_yellow {
-		background-color: #fcddcc;
-		border: 1px solid #fcddcc;
-		color: #FF6912;
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		-webkit-user-select: none;
-		text-decoration: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		border-radius: 0.75rem;
-		height: 3.3125rem;
-		padding: 0 1.25rem 0.0625rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		transition: .15s ease-in-out;
-		position: relative;
-		/* margin-bottom: 1rem; */
-	}
-
-	.button_background_yellow {
-		background-color: #FF6912;
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		-webkit-user-select: none;
-		color: #fff;
-		text-decoration: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		border-radius: 0.75rem;
-		height: 3.3125rem;
-		padding: 0 1.25rem 0.0625rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		transition: .15s ease-in-out;
-		position: relative;
-		border: 1px solid #FF6912;
-		z-index: 0;
-	}
-
-	.button_background_yellow:hover {
-		transition: .15s ease-in-out;
-		background-color: #FCF5F3;
-		color: #FF6912;
-		border: 1px solid #FF6912;
-	}
-
-	.vacancy-card__button_close {
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		width: auto;
-		display: inline-block;
-		max-width: none;
-		margin-right: 0;
-		color: rgba(0, 0, 0, .8);
-		border-bottom: 1px dashed rgba(0, 0, 0, .3);
+	@media only screen and (max-device-width: 576px) {
+		.banner-button-two {
+			margin-top: 9px;
+		}
 	}
 </style>
 
@@ -349,11 +248,12 @@
 			<!-- <p> -->
 			<br>
 
+
 			<input type="text" name="city1" onchange="inputColor()" placeholder="Выберите локацию"
 				class="banner_inputText banner_inputText-one">
 			<input type="text" name="city2" onchange="inputColor()" placeholder="Выберите локацию"
 				class="banner_inputText banner_inputText-two">
-			<button class="banner_button"><svg width="29" height="29" viewBox="0 0 24 24" fill="#fff"
+			<button class="banner_button-loop"><svg width="29" height="29" viewBox="0 0 24 24" fill="#fff"
 					xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd"
 						d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z"
@@ -367,6 +267,10 @@
 		</div>
 	</div>
 </section>
+<center>
+
+<!-- </center> -->
+
 <div class="container-fluid cityList visible" style="background-color: #181818;">
 
 	<div class="row" style="padding: 10px 0px;">
@@ -384,47 +288,92 @@
 	</div>
 </div>
 
-<div class="row">
-	<!-- <center> -->
-	<!-- <div class="col-12 mx-auto"> -->
-	<div class="bannerInfo">
-		<div class="container-fluid">
+<!-- <div class="row"> -->
+<!-- <center> -->
+<!-- <div class="col-12 mx-auto"> -->
+<div class="bannerInfo">
+	<!-- <div class="container-fluid"> -->
 
-			<div class="row textBanner">
-				<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="z-index: 2;">
-					<img style="width: 420px; height: 320px; border-radius: 45px;"
-						src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-						class=" " alt="...">
-					<br>
-					<br>
-					<span class="banner-text_300 d-flex "><span style="color: #FF6912;font-size: 31px;">#1 </span>
-						EtalonSite
-					</span>
-				</div>
-				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="z-index: 2;">
-					<span class="banner-text_500"><span style="color: #FF6912;font-size: 52px;">#1 </span>Nationwide
-						Delivery Logistics Solution</span>
-					<br>
-					<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum non deleniti exercitationem
-						voluptates possimus suscipit et magnam libero eos ex soluta dolorum, corrupti quidem aliquid
-						provident maxime fugit ducimus expedita.</span>
-					<br>
-					<br>
+	<div class="row textBanner">
+		<div class="col-10 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="z-index: 2;">
+			<span class="banner-text_300 d-flex "><span style="color: #FF6912;font-size: 31px;margin-right: 3px;">#1	</span>
+				EtalonSite
+			</span>
+			<img style="width: 420px; height: 320px; border-radius: 45px;"
+				src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
+				class="img-fluid float-none float-md-start float-lg-none" alt="...">
+			<!-- <br>
+			<br> -->
+		</div>
+		<div class="col-12 col-md-8 col-lg-6 col-xl-6" style="z-index: 2;">
+			<span class="banner-text_500"><span style="color: #FF6912;font-size: 52px;">#1 </span>Nationwide
+				Delivery Logistics Solution</span>
+			<br>
+			<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum non deleniti exercitationem
+				voluptates possimus suscipit et magnam libero eos ex soluta dolorum, corrupti quidem aliquid
+				provident maxime fugit ducimus expedita.</span>
+			<br>
+			<br>
+			<!-- <div class="row">
+				<div class="col-12 col-sm-5 col-lg-4 "> -->
 					<button class="btn banner-button banner-button-one" type="submit">Клик</button>
+				<!-- </div> -->
+				<!-- <div class="col-12 col-sm-4"> -->
 					<button class="btn banner-button banner-button-two" type="submit">Клак</button>
-
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>
 </div>
-</center>
 
 <center>
 
 	<div class="container-fluid bigNumbers">
 		<div class="row">
-			<div class="col-4">
+		<div class="col-12 col-sm-4">
+			<h1 class="slogan">20B
+				<span class="bigNumbers-span_small">K</span>
+				<br>
+				<h5 class="bigNumbers-text">
+					Lorem ipsum dolor
+				</h5>
+			</h1>
+		</div>
+
+		<div class="col-12 col-sm-4">
+			<h1 class="slogan">
+				<span class="bigNumbers-span_dollar">&#36;</span>
+				20B
+				<br>
+				<h5 class="bigNumbers-text">
+					Lorem ipsum dolor
+				</h5>
+			</h1>
+		</div>
+
+		<div class="col-12 col-sm-4">
+			<h1 class="slogan">
+				<span class="bigNumbers-span_dollar">&#36;</span>
+				300M
+				<br>
+				<h5 class="bigNumbers-text">
+					Lorem ipsum dolor
+				</h5>
+			</h1>
+		</div>
+</div>
+	</div>
+</div>
+</center>
+<!-- </div>
+</div> -->
+<!-- </center> -->
+<!-- 
+<center>
+
+	<div class="container-fluid bigNumbers">
+		<div class="row">
+			<div class="col-12 col-sm-4">
 				<h1 class="slogan">20B
 					<span class="bigNumbers-span_small">K</span>
 					<br>
@@ -434,7 +383,7 @@
 				</h1>
 			</div>
 
-			<div class="col-4">
+			<div class="col-12 col-sm-4">
 				<h1 class="slogan">
 					<span class="bigNumbers-span_dollar">&#36;</span>
 					20B
@@ -445,7 +394,7 @@
 				</h1>
 			</div>
 
-			<div class="col-4">
+			<div class="col-12 col-sm-4">
 				<h1 class="slogan">
 					<span class="bigNumbers-span_dollar">&#36;</span>
 					300M
@@ -458,7 +407,7 @@
 
 		</div>
 	</div>
-</center>
+</center> -->
 
 
 <section class="py-5 text-center container">
@@ -468,28 +417,28 @@
 			</h1>
 			<div class="row py-lg-5">
 
-				<div class="col-lg-4 col-md-4 mx-auto">
+				<div class="col-lg-4 col-md-6 mx-auto">
 					<div class="blockImage">
 						<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-							class=" " alt="...">
+							class="img-fluid" alt="...">
 						<div class="blockImage-text">
 							<h5>Lorem ipsum dolor, sit </h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 mx-auto">
+				<div class="col-lg-4 col-md-6 mx-auto">
 					<div class="blockImage">
 						<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-							class=" " alt="...">
+							class="img-fluid" alt="...">
 						<div class="blockImage-text">
 							<h5>Lorem ipsum dolor, sit </h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 mx-auto">
+				<div class="col-lg-4 col-md-6 mx-auto">
 					<div class="blockImage">
 						<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-							class=" " alt="...">
+							class="img-fluid" alt="...">
 						<div class="blockImage-text">
 							<h5>Lorem ipsum dolor, sit </h5>
 						</div>
@@ -499,6 +448,7 @@
 		</div>
 </section>
 
+</div>
 <section class="py-5 container">
 	<div class="row py-lg-5">
 		<div class="col-lg-6 col-md-6">
@@ -544,10 +494,11 @@
 				</h3>
 
 		</div>
-		<div class="col-lg-3 col-md-3 offset-1">
+		<div class="col-12 col-lg-5 col-md-6 offset-0 offset-lg-1">
 			<div class="blockImage-powering">
-				<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-					class=" " alt="...">
+				<img style=""
+					src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
+					class="img-fluid" alt="...">
 			</div>
 		</div>
 	</div>
@@ -578,7 +529,7 @@
 <section class="py-5 container">
 	<div class="row py-lg-5">
 
-		<div class="col-lg-4 col-md-4 offset-1">
+		<div class="col-lg-5 col-md-5 offset-1">
 			<div class="blogPowering-text">
 				<br>
 				<h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolor laudantium ipsum explicabo
@@ -589,141 +540,45 @@
 
 		</div>
 		<div class="col-lg-5 col-md-5 offset-1">
-			<img style="width: 500px; margin-top: -70px;"
-				src="https://static.tildacdn.com/tild3936-6561-4161-b864-633562303863/photo.png" class=" " alt="...">
+			<img style="width: 500px;" src="https://static.tildacdn.com/tild3936-6561-4161-b864-633562303863/photo.png"
+				class="img-fluid section__img-map" alt="...">
 		</div>
 	</div>
 	</div>
 </section>
-
-<div class="container">
-	<div class="row">
-		<div class="col-12 offset-0 offset-xl-1">
-			<h1 class="page__title">
-				Работай с нами<span style=" color: #FF6912;">.</span>
-			</h1>
-			<br>
-			<h2 class="page__text"><span
-					style="color: #FF6912; font-size: 45px;font-weight: 700;">{{vacancies.count}}</span> открытие
-				вакансии.</h2>
-		</div>
-	</div>
-
-	<div class="container vacancie">
-		<div class="row">
-			{% for vacancy in vacancies %}
-			{% if vacancy.id|divisibleby:"2" %}
-			<div class="col-12 col-sm-5 offset-0 offset-sm-1 offset-xl-1">
-
-				{% else %}
-				<div class="col-12 col-sm-5 offset-0 offset-xl-1">
-					{% endif %}
+<br><br><br>
+<script>
+	const city_one = document.querySelector('.banner_inputText-one');
+	const city_two = document.querySelector('.banner_inputText-two');
+	const banner_inputText = document.querySelector('.banner_inputText');
+	const cityList = document.querySelector('.cityList');
+	const cityList_span = document.querySelectorAll('.cityList input');
+	// const close = document.querySelector('.close');
 
 
-					<!-- <div class="vacancy-card__head"> -->
-					<h2 class="vacancy-card__title">{{vacancy.title}}</h2>
+	city_one.addEventListener('click', () => {
+		cityList.classList.remove('visible');
+	});
 
-					<p class="vacancy-card__text vacancy-card__text_description"><span>Требуемый опыт работы:
-							{{vacancy.workExperience}}
-							<br> <b>{{vacancy.salary}}</b></p>
+	var index = 0
+	for (let i = 0; i < cityList_span.length; i++) {
+		cityList_span[i].addEventListener('click', () => {
+			var value = cityList_span[i].value;
+			city_one.innerText = value
+			var num = [city_one, city_two]
+			num[index].value = value
+			num[index].classList.add('banner_input-click');
+			cityList_span[i].classList.add('visible');
+			index++
 
-
-
-							<div class="accordion accordion-flush" id="accordionFlushExample">
-								<!-- <div class="accordion-item"> -->
-								  <!-- <h2 class="accordion-header" id="flush-headingOne"> -->
-
-					<div class="accordion-button collapsed vacancy-card__button button button_color_yellow"  data-bs-toggle="collapse" data-bs-target="#flush-collapse{{vacancy.id}}" aria-expanded="false" aria-controls="flush-collapse{{vacancy.id}}">
-						Подробнее
-					</div>
-					<!-- </h2> -->
-					<div id="flush-collapse{{vacancy.id}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{vacancy.id}}" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body">
-							
-					<!-- <div class="vacancy-card__body" >
-					<div class="vacancy-card__holder ">
-						<div class="vacancy-card__section"> -->
-					<h3 class="vacancy-card__section-title vacancy-card__text vacancy-card__text_bold">
-						Обязанности:</h3>
-					<div class="vacancy-card__section-content vacancy-card__text vacancy-card__text_description">
-						<ul>
-							{{vacancy.requirements}}
-						</ul>
-					</div>
-					<!-- </div> -->
-					<!-- <div class="vacancy-card__section"> -->
-					<h3 class="vacancy-card__section-title vacancy-card__text vacancy-card__text_bold">
-						Требования:</h3>
-					<div class="vacancy-card__text_description vacancy-card__section-content vacancy-card__text">
-						<ul>
-							{{vacancy.responsibilities}}
-						</ul>
-					</div>
-					<!-- </div> -->
-					<!-- <div class="vacancy-card__section"> -->
-						<h3 class="vacancy-card__section-title vacancy-card__text vacancy-card__text_bold">Условия:
-					</h3>
-					<div class="vacancy-card__text_description vacancy-card__section-content vacancy-card__text">
-						<ul>
-							{{vacancy.conditions}}
-						</ul>
-					</div>
-					<!-- </div> -->
-					<a href="mailto:dev@mass-project.dev" target="_blank" class="vacancy-card__button button button_background_blue button_color_white">
-						Отправить резюме
-					  </a>
-					<div class="vacancy-card__footer"><a href="mailto:urkabestyzhev@gmail.com" target="_blank"
-						class="vacancy-card__button button button_background_yellow">
-						Отправить резюме
-					</a>
-						<div class="vacancy-card__button vacancy-card__button_close">
-							Свернуть
-						</div>
-					</div>
-					
-
-			  </div>
-			</div>
-		</div>
-			</div>
-			  {% endfor %}
-		</div>
-	</div>
-	
-</div>
-	<br><br><br>
-	<script>
-		const city_one = document.querySelector('.banner_inputText-one');
-		const city_two = document.querySelector('.banner_inputText-two');
-		const banner_inputText = document.querySelector('.banner_inputText');
-		const cityList = document.querySelector('.cityList');
-		const cityList_span = document.querySelectorAll('.cityList input');
-		// const close = document.querySelector('.close');
-
-
-		city_one.addEventListener('click', () => {
-			cityList.classList.remove('visible');
-		});
-
-		var index = 0
-		for (let i = 0; i < cityList_span.length; i++) {
-			cityList_span[i].addEventListener('click', () => {
-				var value = cityList_span[i].value;
-				city_one.innerText = value
-				var num = [city_one, city_two]
-				num[index].value = value
-				num[index].classList.add('banner_input-click');
-				cityList_span[i].classList.add('visible');
-				index++
-
-			}
-			);
 		}
+		);
+	}
 
 
 
-	</script>
-	<script src="{% static '/EtalonSite/js/home.js' %}"></script>
+</script>
+<script src="{% static '/EtalonSite/js/home.js' %}"></script>
 
 
-	{% endblock %}
+{% endblock %}

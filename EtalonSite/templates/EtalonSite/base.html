@@ -11,7 +11,7 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
             <link rel="stylesheet prefetch"
             href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.standalone.css">
-<link href="{% sass_src './EtalonSite/css/base.scss' %}" rel="stylesheet" type="text/css"/>
+<link href="{% sass_src './EtalonSite/css/base.css' %}" rel="stylesheet" type="text/css"/>
   
     <title>EtalonTrans</title>
 </head>
@@ -24,8 +24,6 @@
   background-color: #181818;
   color: #fff;
   padding: 40px 20px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
 }
 .footer h2{
   font-size: 20px;
@@ -50,33 +48,225 @@
 	/* background: right 5% / 15% 60% no-repeat url("https://css.gg/arrow-bottom-right.svg");	 */
 	background: right 51% / 30% 60% no-repeat url("/static/EtalonSite/arrow-bottom-right.svg");	
 }
+.Menu a{
+  text-decoration: none;
+}
+.visible{
+  display: none;
+  opacity: 0;
+}
 
 
+.popup__container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 20px;
+    height: 270px;
+    max-width: 500px;
+    min-width: 400px;
+}
+
+.popup__containerInfo {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    /* transform: translate(0%, -50%); */
+    background: #fff;
+    /* border-radius: 0px; */
+    height: 100%;
+    /* border: 1px solid #000; */
+    /* border-top: 7px solid #3468F0; */
+    text-align: left;
+    max-width: 470px;
+}
+
+.popup__containerInfo input, .popup__containerInfo button{
+    border-radius: 20px;
+}
+
+.popup__wrapper {
+    padding: 40px;
+}
+
+
+.popup__send,.popup__call{
+  width: 100%;
+    color: #fff;
+    background-color: #FF6912;
+    border: 1px solid #FF6912;
+    padding: 15px 0px;
+    border-radius: 0px;
+}
+
+
+.popup__send:hover,.popup__call:hover {
+    /* Пробуй разное */
+    /* border: none; */
+    color: #FE7030;
+    background-color: #fff;
+}
+
+.visible{
+    display: none;
+}
+
+
+.popup3 {
+    position: fixed;
+    width: 100%;
+    z-index: 222;
+    /* height: 100%; */
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 1.5s ease;
+}
+
+
+
+.popup, .popup2 {
+    position: fixed;
+    width: 100%;
+    z-index: 222;
+    height: 100%;
+    transition: all 1.5s ease;
+
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media only screen and (max-device-width: 800px){
+    .popupBuy{
+        /* background: #fff; */
+        position: fixed;
+        width: 100%;
+        z-index: 222;
+        /* height: 100%; */
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 1.5s ease;
+    }
+    .popup__containerInfo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 20px;
+        height: 500px;
+        max-width: 500px;
+        min-width: 400px;
+    }
+} 
+
+
+/* эффект плавного появления  */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.popup-card__button{
+  text-decoration: none;
+  color: inherit;
+}
+
+.popup-card__button:hover{
+  text-decoration: none;
+  color: inherit;
+}
+.delete {
+    background: url('/static/EtalonSite/images/icon-delete.png') no-repeat 50% 50%;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    height: 20px;
+    width: 20px;
+    background-size: 14px;
+    cursor: pointer;
+}
 </style>
 
-    
-        
+<div class="popup visible">
+  <div class="popup__container">
+      <div class="popup__wrapper">
+          <div id="authentication">
+            <span class="delete"></span>
+
+              <center>
+                  <div class="logotype" style="margin-top: -20px;">
+                      Эталон-Транс
+                  </div>
+              </center>
+              <center>
+                  <h5 style="font-size: 23px;font-weight: 500; margin-top: -1px; margin-bottom: 10px;">
+                      Обращайтесь в любое время.
+                  </h5>
+                  <br>
+                  <br>
+                </center>
+                
+              </div>
+              <!-- <div class="container"> -->
+                
+                <div class="row">
+                  <div class="col-12 col-sm-6">
+                    
+                    <a href="mailto:urkabestyzhev@gmail.com?subject=Письмо с сайта&body=Здравствуйте!" target="_blank" class="popup-card__button">
+
+                      <button type="button" class="popup__send">
+                        Написать
+                      </button>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <a href="tel:+79966304529">
+                    <button type="button" class="popup__call">Позвонить</button>
+                  </a>
+                <!-- </div> -->
+                  </div>
+                  </div>
+              </div>
+  </div>
+</div>
+
+
+
+
         <div class="Menu visible">
             <ul class="Menu-list" data-offset="10">
               <li class="Menu-list-item" data-offset="20" onclick>
-                О нас
-                <span class="Mask"><span>О нас</span></span>
-                <span class="Mask"><span>О нас</span></span>
+                <a href="{% url 'home' %}">
+                Главная
+                <span class="Mask"><span>Главная</span></span>
+                <span class="Mask"><span>Главная</span></span>
+              </a>
               </li>
               <li class="Menu-list-item" data-offset="16" onclick>
+                <a href="{% url 'contacts' %}">
                 Контакты
                 <span class="Mask"><span>Контакты</span></span>
                 <span class="Mask"><span>Контакты</span></span>
+                </a>
               </li>
               <li class="Menu-list-item" data-offset="12" onclick>
-                Work
-                <span class="Mask"><span>Work</span></span>
-                <span class="Mask"><span>Work</span></span>
-              </li>
-              <li class="Menu-list-item" data-offset="8" onclick>
-                Contact
-                <span class="Mask"><span>Contact</span></span>
-                <span class="Mask"><span>Contact</span></span>
+                <a href="{% url 'vacancies' %}">
+                  Вакансии
+                  <span class="Mask">
+                    <span>Вакансии</span>
+                  </span>
+                  <span class="Mask"><span>Вакансии</span></span>
+                </a>
               </li>
               <hr style="border: 4px solid#ffff;width: 25%;border-radius: 20px;">
               <li class="Menu-list-item" data-offset="8" onclick>
@@ -96,7 +286,7 @@
                         <div class="logotype">
                             <a id="logo"
                                class="navbar-brand col-1 col-sm-7 col-md-4 offset-1 offset-sm-1 offse4t-md-1 offset-xl-1 offset-xxl-2"
-                               href="#" style="color: #000;">
+                               href="{% url 'home' %}" style="color: #000;">
                           Эталон-Транс
                               </a>
                         </div>
@@ -107,13 +297,13 @@
                     <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="#">О нас</a>
+                          <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Контакты</a>
+                          <a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a>
                         </li>
                         <li class="nav-item ">
-                          <button class="btn btnKlient" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem; color: #FF2C75;border: 1px solid #FF2C75;color: #fff;background-color: #FF6912;box-shadow: 0px 0px 20px rgba(255,105,18,0.6)">Связаться</button>
+                          <button class="btn btnKlient header__button_color-white" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem; color: #FF2C75;border: 1px solid #FF2C75;color: #fff;background-color: #FF6912;box-shadow: 0px 0px 20px rgba(255,105,18,0.6)">Связаться</button>
                         </li>
                       </ul>
                     </div>
@@ -138,7 +328,7 @@
 <div class="footer">
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3">
+    <div class="col-3 ">
       <h2>
         EtalonTrans
       </h2>
@@ -186,9 +376,33 @@
 </div>
 
 </div>
+<script>
+   const popup = document.querySelector('.popup');
+    const popup2 = document.querySelector('.popup2');
+    const popupBuy = document.querySelector('.popupBuy');
+    const popupBuy2 = document.querySelector('.popupBuy2');
+    const deleteForm = document.querySelector('.delete');
+    const headerButton = document.querySelector('.header__button_color-white');
+
+    headerButton.addEventListener('click', () => {
+        popup.classList.remove('visible');
+    });
+    deleteForm.addEventListener('click', () => {
+        popup.classList.add('visible');
+    });
+    
+    // buy.addEventListener('click', () => {
+    //     popupBuy2.classList.add('visible');
+    //   });
+    //   buyTicket1.addEventListener('click', () => {
+    //     popupBuy.classList.remove('visible');
+    // });
 
 
-    <script src="{% static '/EtalonSite/js/paralax.js' %}"></script>
+
+</script>
+<script src="{% static '/EtalonSite/js/paralax.js' %}"></script>
+
     <!-- <link rel="stylesheet" href="https://snipp.ru/cdn/selectize.js/0.12.6/dist/css/selectize.default.css">
 <script src="https://snipp.ru/cdn/microplugin.js/src/microplugin.js"></script>
 <script src="https://snipp.ru/cdn/sifter.js/sifter.min.js"></script>

@@ -15,3 +15,16 @@ class Vacancies(models.Model):
     conditions = models.CharField(max_length=200)
     def __str__(self):
         return self.title 
+    
+class Contacts(models.Model):
+    TIN = models.CharField(max_length=10)
+    address = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    def __str__(self):
+        return self.email
+    
+class Telegram(models.Model):
+    idTelegram = models.CharField(max_length=60)
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.idTelegram
