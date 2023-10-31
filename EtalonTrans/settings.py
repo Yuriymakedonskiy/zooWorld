@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'EtalonSite',
     'sass_processor',
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,10 +131,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    "/var/www/static/",
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static"]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

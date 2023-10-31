@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import City, Vacancies,Contacts,Telegram
+from .models import City, Vacancies,Contacts,Telegram,File
+
+
 def home(request):
     city = City.objects.all()
     vacancies = Vacancies.objects.all()
@@ -13,3 +15,7 @@ def contacts(request):
     contacts = Contacts.objects.first()
     telegram = Telegram.objects.all()
     return render(request,'EtalonSite/contacts.html',{'contacts':contacts,'telegram':telegram})
+
+def files(request):
+    files = File.objects.all()
+    return render(request,'EtalonSite/files.html',{'files':files})

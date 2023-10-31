@@ -1,0 +1,137 @@
+{% extends 'EtalonSite/base.html' %}
+{% block content %}
+{% load static %}
+<style>
+	.file_block {
+		/* width: 200px; */
+		border-radius: 20px;
+		/* background-color: #5080C1; */
+		/* box-shadow: 0px 10px 17px -54px rgba(30,67,81,0.45); */
+		/* box-shadow: 0px 0px 10px 2px rgba(78, 67, 231, 0.45); */
+		/* box-shadow: -11px 25px 124px 6px rgba(30,67,81,0.45); */
+		/* box-shadow: 0px -100px 40px rgba(165, 170, 248, 0.9); */
+		/* box-shadow: 0px -100px 40px rgba(255, 255, 255, 0.9); */
+
+		/* box-shadow: 0px -90px 60px rgba(18, 121, 255, 0.6); */
+		box-shadow: 0px 0px 40px rgba(18, 121, 255, 0.2);
+	}
+
+	.page__text {
+		font-weight: 600;
+		font-size: 2.25rem;
+		line-height: 2.625rem;
+		letter-spacing: -.04em;
+		margin-bottom: 3.275rem;
+		position: relative;
+		z-index: 1;
+		margin-left: 0.525rem;
+
+	}
+
+	.page__title {
+		font-weight: 700;
+		font-size: 4.6875rem;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		margin-left: 0.525rem;
+		position: relative;
+		z-index: 1;
+	}
+
+	.page__vacancy {
+		width: calc(50% - 2.1875rem);
+		margin-right: 4.375rem;
+		margin-bottom: 4.375rem;
+	}
+
+	.button_background__blue {
+		width: 100%;
+		background-color: #c6ddfe;
+		/* url('{% static ".jpg" %}') */
+		background: url("/static/EtalonSite/images/arrow-right.svg") right 51% / 30% 60% no-repeat;
+
+		border: 1px solid #c6ddfe;
+		color: #5080C1;
+		font-weight: 600;
+		font-size: 1.0625rem;
+		line-height: 1.25rem;
+		letter-spacing: -.03em;
+		cursor: pointer;
+		-webkit-user-select: none;
+		text-decoration: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border-radius: 0.75rem;
+		height: 3.3125rem;
+		padding: 0 1.25rem 0.0625rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: left;
+		transition: .15s ease-in-out;
+		position: relative;
+	}
+
+	.button_background__blue:hover {
+		transition: .15s ease-in-out;
+		background-color: #FCF5F3;
+		color: #5080C1;
+		font-size: 1.1925rem;
+		border: 1px solid #5080C1;
+	}
+</style>
+<div class="container">
+	<div class="row">
+		<div class="col-11 offset-0 offset-xl-1">
+			<h1 class="page__title">
+				Файлы и документы<span style=" color: #5080C1;">.</span>
+			</h1>
+			<br>
+			<h2 class="page__text"><span style="color: #5080C1; font-size: 45px;font-weight: 700;">
+			</h2>
+		</div>
+	</div>
+	<div class="container vacancie">
+		<div class="row">
+			
+			{% for file in files %}
+			<div class="col-12 col-sm-3 offset-0 offset-sm-1 offset-xl-1">
+				<div class="file_block">
+					<div class="file_block__text-top" style="padding: 10px;">
+
+						<div class="file">
+							<a style="font-style: italic; text-decoration: none; color: #000;"
+								href="{{file.file.url}}" download>
+								<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+									style="width: 50px; margin: 20px 10px;">
+								{{file.text}}
+							</a>
+						</div>
+						<!-- <p class="vacancy-card__text vacancy-card__text_description">
+
+						</p> -->
+						<a style="font-style: italic; text-decoration: none; color: #000;"
+								href="{{file.file.url}}">
+								
+						<button class="button_background__blue" style="margin-bottom: 10px;">Посмотреть</button>
+					</a>
+						<a style="font-style: italic; text-decoration: none; color: #000; "
+								href="{{file.file.url}}" download>
+								
+						<button class="button_background__blue" >Скачать</button>
+					</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+{% endblock %}

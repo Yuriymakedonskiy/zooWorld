@@ -28,3 +28,10 @@ class Telegram(models.Model):
     name = models.CharField(max_length=100)
     def __str__(self):
         return self.idTelegram
+    
+class File(models.Model):
+    name = models.CharField(max_length=40)
+    text = models.CharField(max_length=40)
+    file = models.FileField(upload_to="docs/", null=True,unique=True)
+    def __str__(self):
+        return self.text

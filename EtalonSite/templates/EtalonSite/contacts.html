@@ -1,174 +1,23 @@
 {% extends 'EtalonSite/base.html' %}
 {% block content %}
 {% load static %}
-<style>
-	.page__text {
-		font-weight: 600;
-		font-size: 2.25rem;
-		line-height: 2.625rem;
-		letter-spacing: -.04em;
-		margin-bottom: 3.275rem;
-		position: relative;
-		z-index: 1;
-		margin-left: 0.525rem;
-
-	}
-
-	.page__title {
-		font-weight: 700;
-		font-size: 4.6875rem;
-		line-height: 4.875rem;
-		letter-spacing: -.05em;
-		margin-bottom: 0.225rem;
-		margin-left: 0.525rem;
-		position: relative;
-		z-index: 1;
-	}
-
-	.page__vacancy {
-		width: calc(50% - 2.1875rem);
-		margin-right: 4.375rem;
-		margin-bottom: 4.375rem;
-	}
-
-
-	.vacancy-card__title {
-		font-weight: 600;
-		font-size: 1.5rem;
-		line-height: 1.75rem;
-		letter-spacing: -.035em;
-		margin-bottom: 0.9375rem;
-		margin-top: 3.9375rem;
-		font-weight: 700;
-	}
-
-	.vacancy-card__text_description {
-		color: rgba(0, 0, 0, .6);
-		margin-bottom: 1.5625rem;
-	}
-
-	.vacancy-card__text {
-		font-size: 1.125rem;
-		line-height: 1.625rem;
-		letter-spacing: -.04em;
-	}
-
-	.vacancie {
-		margin-top: -1.5625rem;
-	}
-
-	.vacancy-card__footer {
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-	}
-
-	.vacancy-card__button {
-		margin-right: 1rem;
-	}
-
-	.button_color_yellow {
-		background-color: #fcddcc;
-		border: 1px solid #fcddcc;
-		color: #FF6912;
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		-webkit-user-select: none;
-		text-decoration: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		border-radius: 0.75rem;
-		height: 3.3125rem;
-		padding: 0 1.25rem 0.0625rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		transition: .15s ease-in-out;
-		position: relative;
-		/* margin-bottom: 1rem; */
-	}
-
-	.button_background_yellow {
-		background-color: #FF6912;
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		-webkit-user-select: none;
-		color: #fff;
-		text-decoration: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		border-radius: 0.75rem;
-		height: 3.3125rem;
-		padding: 0 1.25rem 0.0625rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		transition: .15s ease-in-out;
-		position: relative;
-		border: 1px solid #FF6912;
-		z-index: 0;
-	}
-
-	.button_background_yellow:hover {
-		transition: .15s ease-in-out;
-		background-color: #FCF5F3;
-		color: #FF6912;
-		border: 1px solid #FF6912;
-	}
-
-	.vacancy-card__button_close {
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		width: auto;
-		display: inline-block;
-		max-width: none;
-		margin-right: 0;
-		color: rgba(0, 0, 0, .8);
-		border-bottom: 1px dashed rgba(0, 0, 0, .3);
-	}
-
-	.contacts__item-text_link {
-		text-decoration: none;
-		color: #FF6912;
-		border-bottom: 1px solid #f5bd9e;
-		padding-bottom: 2px;
-	}
-
-	.contacts__item-icon {
-		margin-bottom: 0.9375rem;
-		height: 2.5rem;
-		width: 2.5rem;
-		align-self: flex-start;
-	}
-</style>
+<link href="{% static 'EtalonSite/css/contacts.css' %}" rel="stylesheet" type="text/css"/>
 
 
 <div class="container">
 	<div class="row">
 		<div class="col-11 offset-0 offset-xl-1">
 			<h1 class="page__title">
-				Пишите в Telegram<span style="color: #FF6912;">.</span><span style=" color: #FF6912;">.</span><span
-					style=" color: #FF6912;">.</span>
+				Пишите в Telegram<span style="color: #5080C1;">.</span><span style=" color: #5080C1;">.</span><span
+					style=" color: #5080C1;">.</span>
 			</h1>
 			<br>
 			<h2 class="page__text">
 				{% for telegram_account in telegram %}
 				{% if telegram_account.id == telegram.count %}
-				<span style="color: #FF6912; font-size: 45px;font-weight: 700;">@</span>{{telegram_account.idTelegram}}
+				<span style="color: #5080C1; font-size: 45px;font-weight: 700;">@</span>{{telegram_account.idTelegram}}
 				{% else %}
-				<span style="color: #FF6912; font-size: 45px;font-weight: 700;">@</span>{{telegram_account.idTelegram}},
+				<span style="color: #5080C1; font-size: 45px;font-weight: 700;">@</span>{{telegram_account.idTelegram}},
 				{% endif %}
 				{% endfor %}
 			</h2>
@@ -193,6 +42,8 @@
 							{{contacts.email}}</h2>
 
 						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								8-3463-210-557, <br>
+								8-908-893-26-49 <br>
 								Присылайте предложения, резюме, брифы.
 								В госконтрактах не участвуем.
 					</div>
@@ -204,38 +55,4 @@
 
 
 <br><br><br>
-<script>
-	const city_one = document.querySelector('.banner_inputText-one');
-	const city_two = document.querySelector('.banner_inputText-two');
-	const banner_inputText = document.querySelector('.banner_inputText');
-	const cityList = document.querySelector('.cityList');
-	const cityList_span = document.querySelectorAll('.cityList input');
-	// const close = document.querySelector('.close');
-
-
-	city_one.addEventListener('click', () => {
-		cityList.classList.remove('visible');
-	});
-
-	var index = 0
-	for (let i = 0; i < cityList_span.length; i++) {
-		cityList_span[i].addEventListener('click', () => {
-			var value = cityList_span[i].value;
-			city_one.innerText = value
-			var num = [city_one, city_two]
-			num[index].value = value
-			num[index].classList.add('banner_input-click');
-			cityList_span[i].classList.add('visible');
-			index++
-
-		}
-		);
-	}
-
-
-
-</script>
-<script src="{% static '/EtalonSite/js/home.js' %}"></script>
-
-
 {% endblock %}

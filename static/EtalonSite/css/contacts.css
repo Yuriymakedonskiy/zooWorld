@@ -1,0 +1,150 @@
+.page__text {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+    letter-spacing: -.04em;
+    margin-bottom: 3.275rem;
+    position: relative;
+    z-index: 1;
+    margin-left: 0.525rem;
+
+}
+
+.page__title {
+    font-weight: 700;
+    font-size: 4.6875rem;
+    line-height: 4.875rem;
+    letter-spacing: -.05em;
+    margin-bottom: 0.225rem;
+    margin-left: 0.525rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page__vacancy {
+    width: calc(50% - 2.1875rem);
+    margin-right: 4.375rem;
+    margin-bottom: 4.375rem;
+}
+
+
+.vacancy-card__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: -.035em;
+    margin-bottom: 0.9375rem;
+    margin-top: 3.9375rem;
+    font-weight: 700;
+}
+
+.vacancy-card__text_description {
+    color: rgba(0, 0, 0, .6);
+    margin-bottom: 1.5625rem;
+}
+
+.vacancy-card__text {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    letter-spacing: -.04em;
+}
+
+.vacancie {
+    margin-top: -1.5625rem;
+}
+
+.vacancy-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.vacancy-card__button {
+    margin-right: 1rem;
+}
+
+.button_color_yellow {
+    background-color: #fcddcc;
+    border: 1px solid #fcddcc;
+    color: #FF6912;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    letter-spacing: -.03em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    text-decoration: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 0.75rem;
+    height: 3.3125rem;
+    padding: 0 1.25rem 0.0625rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: .15s ease-in-out;
+    position: relative;
+    /* margin-bottom: 1rem; */
+}
+
+.button_background_yellow {
+    background-color: #FF6912;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    letter-spacing: -.03em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    color: #fff;
+    text-decoration: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 0.75rem;
+    height: 3.3125rem;
+    padding: 0 1.25rem 0.0625rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: .15s ease-in-out;
+    position: relative;
+    border: 1px solid #FF6912;
+    z-index: 0;
+}
+
+.button_background_yellow:hover {
+    transition: .15s ease-in-out;
+    background-color: #FCF5F3;
+    color: #FF6912;
+    border: 1px solid #FF6912;
+}
+
+.vacancy-card__button_close {
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    letter-spacing: -.03em;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+    max-width: none;
+    margin-right: 0;
+    color: rgba(0, 0, 0, .8);
+    border-bottom: 1px dashed rgba(0, 0, 0, .3);
+}
+
+.contacts__item-text_link {
+    text-decoration: none;
+    color: #1E2345;
+    border-bottom: 1px solid #1E2345;
+    padding-bottom: 2px;
+}
+
+.contacts__item-icon {
+    margin-bottom: 0.9375rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    align-self: flex-start;
+}

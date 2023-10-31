@@ -2,145 +2,289 @@
 {% load sass_tags %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
-    <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
-            <link rel="stylesheet prefetch"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.standalone.css">
-<link href="{% sass_src './EtalonSite/css/base.css' %}" rel="stylesheet" type="text/css"/>
-  
-    <title>EtalonTrans</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/css.gg@2.0.0/icons/css/mail.css' rel='stylesheet'>
+  <link href='https://unpkg.com/css.gg@2.0.0/icons/css/phone.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.standalone.css">
+  <link href="{% static 'EtalonSite/css/base.css' %}" rel="stylesheet" type="text/css" />
+
+  <title>EtalonTrans</title>
 </head>
+
 <body>
-<style>
-  body{
-   background-color: #F5F5F5;
-  }
-.footer{
-  background-color: #181818;
-  color: #fff;
-  padding: 40px 20px;
-}
-.footer h2{
-  font-size: 20px;
-}
-.footer h4{
-  font-size: 16px;
-  color: #8d8d8d;
-}
+  <style>
 
 .footer-Email{
-  background-color: #181818;
-  border: none;
-  color: #fff;
-  padding-left: 15px;
-  padding-bottom: 15px;
-  padding-top: 15px;
-    border-bottom: 1px solid #8d8d8d;
-}
-.footer-Email:placeholder-shown{
-  padding-left: 15px;
-  padding-bottom: 15px;
-	/* background: right 5% / 15% 60% no-repeat url("https://css.gg/arrow-bottom-right.svg");	 */
-	background: right 51% / 30% 60% no-repeat url("/static/EtalonSite/arrow-bottom-right.svg");	
-}
-.Menu a{
-  text-decoration: none;
-}
-.visible{
-  display: none;
-  opacity: 0;
+   padding-left: 15px;
+   padding-bottom: 15px;
+   /* url('{% static ".jpg" %}') */
+   background: url("/static/EtalonSite/images/arrow-bottom-right.svg") right 51% / 30% 60% no-repeat;
+   /* background: right 5% / 15% 60% no-repeat url("https://css.gg/arrow-bottom-right.svg");	 */
 }
 
+    #navbarToggleExternalContent9 a {
+      color: #181818;
+      background-color: rgb(245, 245, 245, 0.7);
+      transition: all 1.5s ease;
 
-.popup__container {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    border-radius: 20px;
-    height: 270px;
-    max-width: 500px;
-    min-width: 400px;
-}
+      /* font-weight: 300; */
+      opacity: 0.8;
+    }
 
-.popup__containerInfo {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    /* transform: translate(0%, -50%); */
-    background: #fff;
-    /* border-radius: 0px; */
-    height: 100%;
-    /* border: 1px solid #000; */
-    /* border-top: 7px solid #3468F0; */
-    text-align: left;
-    max-width: 470px;
-}
+    #navbarToggleExternalContent9 a:hover {
+      /* opacity: 1;
+    transition: ; */
+      background-color: rgb(245, 245, 245, 1);
+      transition: all 0.5s ease;
 
-.popup__containerInfo input, .popup__containerInfo button{
-    border-radius: 20px;
-}
+    }
 
-.popup__wrapper {
-    padding: 40px;
-}
+    .animated-icon1,
+    .animated-icon2,
+    .animated-icon3 {
+      width: 30px;
+      height: 20px;
+      position: relative;
+      margin: 0px;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      -o-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .animated-icon1 span,
+    .animated-icon2 span,
+    .animated-icon3 span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+    }
+
+    .animated-icon1 span {
+      background: #2d7ef7;
+    }
+
+    .animated-icon2 span {
+      background: #e3f2fd;
+    }
+
+    .animated-icon3 span {
+      background: #f3e5f5;
+    }
+
+    .animated-icon1 span:nth-child(1) {
+      top: 0px;
+    }
+
+    .animated-icon1 span:nth-child(2) {
+      top: 10px;
+    }
+
+    .animated-icon1 span:nth-child(3) {
+      top: 20px;
+    }
+
+    .animated-icon1.open span:nth-child(1) {
+      top: 11px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+
+    .animated-icon1.open span:nth-child(2) {
+      opacity: 0;
+      left: -60px;
+    }
+
+    .animated-icon1.open span:nth-child(3) {
+      top: 11px;
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    }
+
+    body {
+      background-color: #F5F5F5;
+    }
+
+    #navbarToggleExternalContent9 {
+      background-color: rgb(245, 245, 245, 0.7);
+      margin-left: 10px;
+    }
+
+    .site-header {
+      background-color: rgb(245, 245, 245, 0.7);
+      transition: all 1.5s ease;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      /* background-color: #F5F5F5 ; */
+    }
+
+    #navbarToggleExternalContent9:hover,
+    .site-header:hover {
+      background-color: rgb(245, 245, 245, 1);
+      transition: all 0.5s ease;
+      /* background-color: #F5F5F5 ; */
+    }
+
+    .footer {
+      background-color: #181818;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .footer h2 {
+      font-size: 20px;
+    }
+
+    .footer h4 {
+      font-size: 16px;
+      color: #8d8d8d;
+    }
+
+    .footer-Email {
+      background-color: #181818;
+      border: none;
+      color: #fff;
+      padding-left: 15px;
+      padding-bottom: 15px;
+      padding-top: 15px;
+      border-bottom: 1px solid #8d8d8d;
+    }
+
+    .footer-Email:placeholder-shown {
+      padding-left: 15px;
+      padding-bottom: 15px;
+      /* background: right 5% / 15% 60% no-repeat url("https://css.gg/arrow-bottom-right.svg");	 */
+      background: right 51% / 30% 60% no-repeat url("/static/EtalonSite/arrow-bottom-right.svg");
+    }
+
+    .Menu a {
+      text-decoration: none;
+    }
+
+    .visible {
+      display: none;
+      opacity: 0;
+    }
 
 
-.popup__send,.popup__call{
-  width: 100%;
-    color: #fff;
-    background-color: #FF6912;
-    border: 1px solid #FF6912;
-    padding: 15px 0px;
-    border-radius: 0px;
-}
+    .popup__container {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 20px;
+      height: 270px;
+      max-width: 500px;
+      min-width: 400px;
+    }
+
+    .popup__containerInfo {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      /* transform: translate(0%, -50%); */
+      background: #fff;
+      /* border-radius: 0px; */
+      height: 100%;
+      /* border: 1px solid #000; */
+      /* border-top: 7px solid #3468F0; */
+      text-align: left;
+      max-width: 470px;
+    }
+
+    .popup__containerInfo input,
+    .popup__containerInfo button {
+      border-radius: 20px;
+    }
+
+    .popup__wrapper {
+      padding: 40px;
+    }
 
 
-.popup__send:hover,.popup__call:hover {
-    /* Пробуй разное */
-    /* border: none; */
-    color: #FE7030;
-    background-color: #fff;
-}
-
-.visible{
-    display: none;
-}
-
-
-.popup3 {
-    position: fixed;
-    width: 100%;
-    z-index: 222;
-    /* height: 100%; */
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 0.3);
-    transition: all 1.5s ease;
-}
+    .popup__send,
+    .popup__call {
+      width: 100%;
+      color: #fff;
+      background-color: #FF6912;
+      border: 1px solid #FF6912;
+      padding: 15px 0px;
+      border-radius: 0px;
+    }
 
 
+    .popup__send:hover,
+    .popup__call:hover {
+      /* Пробуй разное */
+      /* border: none; */
+      color: #FE7030;
+      background-color: #fff;
+    }
 
-.popup, .popup2 {
-    position: fixed;
-    width: 100%;
-    z-index: 222;
-    height: 100%;
-    transition: all 1.5s ease;
+    .visible {
+      display: none;
+    }
 
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 0.3);
-}
 
-@media only screen and (max-device-width: 800px){
-    .popupBuy{
+    .popup3 {
+      position: fixed;
+      width: 100%;
+      z-index: 222;
+      /* height: 100%; */
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 1.5s ease;
+    }
+
+
+
+    .popup,
+    .popup2 {
+      position: fixed;
+      width: 100%;
+      z-index: 222;
+      height: 100%;
+      transition: all 1.5s ease;
+
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    @media only screen and (max-device-width: 800px) {
+      .popupBuy {
         /* background: #fff; */
         position: fixed;
         width: 100%;
@@ -150,8 +294,9 @@
         left: 0;
         background: rgba(255, 255, 255, 0.3);
         transition: all 1.5s ease;
-    }
-    .popup__containerInfo{
+      }
+
+      .popup__containerInfo {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -161,256 +306,211 @@
         height: 500px;
         max-width: 500px;
         min-width: 400px;
+      }
     }
-} 
 
+    nav .accordion-body i {
+      position: fixed;
+      top: 75px;
+      right: 5rem;
+    }
 
-/* эффект плавного появления  */
-@keyframes fadeIn {
-    from {
+    .accordion-body .navbar-collapse-item_mail i {
+      top: 78px;
+      position: fixed;
+      right: 7.5rem;
+      /* margin-left: -5px; */
+    }
+
+    /* эффект плавного появления  */
+    @keyframes fadeIn {
+      from {
         opacity: 0;
-    }
+      }
 
-    to {
+      to {
         opacity: 1;
+      }
     }
-}
-
-.popup-card__button{
-  text-decoration: none;
-  color: inherit;
-}
-
-.popup-card__button:hover{
-  text-decoration: none;
-  color: inherit;
-}
-.delete {
-    background: url('/static/EtalonSite/images/icon-delete.png') no-repeat 50% 50%;
-    position: absolute;
-    right: 20px;
-    top: 25px;
-    height: 20px;
-    width: 20px;
-    background-size: 14px;
-    cursor: pointer;
-}
-</style>
-
-<div class="popup visible">
-  <div class="popup__container">
-      <div class="popup__wrapper">
-          <div id="authentication">
-            <span class="delete"></span>
-
-              <center>
-                  <div class="logotype" style="margin-top: -20px;">
-                      Эталон-Транс
-                  </div>
-              </center>
-              <center>
-                  <h5 style="font-size: 23px;font-weight: 500; margin-top: -1px; margin-bottom: 10px;">
-                      Обращайтесь в любое время.
-                  </h5>
-                  <br>
-                  <br>
-                </center>
-                
-              </div>
-              <!-- <div class="container"> -->
-                
-                <div class="row">
-                  <div class="col-12 col-sm-6">
-                    
-                    <a href="mailto:urkabestyzhev@gmail.com?subject=Письмо с сайта&body=Здравствуйте!" target="_blank" class="popup-card__button">
-
-                      <button type="button" class="popup__send">
-                        Написать
-                      </button>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6">
-                  <a href="tel:+79966304529">
-                    <button type="button" class="popup__call">Позвонить</button>
-                  </a>
-                <!-- </div> -->
-                  </div>
-                  </div>
-              </div>
-  </div>
-</div>
+  </style>
 
 
-
-
-        <div class="Menu visible">
-            <ul class="Menu-list" data-offset="10">
-              <li class="Menu-list-item" data-offset="20" onclick>
-                <a href="{% url 'home' %}">
-                Главная
-                <span class="Mask"><span>Главная</span></span>
-                <span class="Mask"><span>Главная</span></span>
-              </a>
-              </li>
-              <li class="Menu-list-item" data-offset="16" onclick>
-                <a href="{% url 'contacts' %}">
-                Контакты
-                <span class="Mask"><span>Контакты</span></span>
-                <span class="Mask"><span>Контакты</span></span>
-                </a>
-              </li>
-              <li class="Menu-list-item" data-offset="12" onclick>
-                <a href="{% url 'vacancies' %}">
-                  Вакансии
-                  <span class="Mask">
-                    <span>Вакансии</span>
-                  </span>
-                  <span class="Mask"><span>Вакансии</span></span>
-                </a>
-              </li>
-              <hr style="border: 4px solid#ffff;width: 25%;border-radius: 20px;">
-              <li class="Menu-list-item" data-offset="8" onclick>
-                Закрыть 
-                <span class="Mask close"><span>Закрыть</span></span>
-                <span class="Mask close"><span>Закрыть</span></span>
-              </li>
-            </ul>
-          </div>
-          <div id="blue">
-            <!-- Навигационное поле -->
-            
-          
-            <nav class="site-header sticky-top  navbar navbar-expand-lg navbar-light">
-              <div class="container" style="color: #000">
-                    <div class="row">
-                        <div class="logotype">
-                            <a id="logo"
-                               class="navbar-brand col-1 col-sm-7 col-md-4 offset-1 offset-sm-1 offse4t-md-1 offset-xl-1 offset-xxl-2"
-                               href="{% url 'home' %}" style="color: #000;">
-                          Эталон-Транс
-                              </a>
-                        </div>
-                       <!-- <center class="hrBan" style="margin-bottom: 30px; margin-top: -4px"> 
-                              <hr class="divider my-1 text-center">
-                            </center> -->
-                    </div>
-                    <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a>
-                        </li>
-                        <li class="nav-item ">
-                          <button class="btn btnKlient header__button_color-white" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem; color: #FF2C75;border: 1px solid #FF2C75;color: #fff;background-color: #FF6912;box-shadow: 0px 0px 20px rgba(255,105,18,0.6)">Связаться</button>
-                        </li>
-                      </ul>
-                    </div>
-                  
-                    <span style="cursor:pointer;" class="navbar-toggler-icon"></span>
-                    
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </nav>
+  <nav class="site-header sticky-top  navbar navbar-expand-lg navbar-light">
+    <div class="container" style="color: #000">
+      <div class="row">
+        <div class="logotype">
+          <a id="logo"
+            class="navbar-brand col-1 col-sm-7 col-md-4 offset-1 offset-sm-1 offse4t-md-1 offset-xl-1 offset-xxl-2"
+            href="{% url 'home' %}" style="color: #000;">
+            <img style="width: 165px; margin-top: 10px;" src="{% static 'EtalonSite/images/ets.svg' %}" alt="логотип"
+              class="img-fluid">
+          </a>
         </div>
-
-          <div class="container">
-        <center class="hrBan" style="color: #A8A8A9; margin-bottom: 30px; margin-top: -4px"> 
-               <hr class="divider my-1 text-center">
-             </center>
-        </div>
-{% block content %}
-{% endblock %}
-   
-<div class="footer">
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-3 ">
-      <h2>
-        EtalonTrans
-      </h2>
-      <br>
-      <h4>
-        Lorem, ipsum dolor sit amet consectetur 
-      </h4>
-      <br>
-      <h4>
-        Copyright 2023
-      </h4>
-    </div>
-    
-    <div class="col-3">
-      <h2>
-        Компания
-      </h2>
-      <br>
-        <h4>О нас</h4>
-        <h4>Контакты</h4>
-        <h4>Лицензии</h4>
-        <h4>Карьера</h4>
-        <h4>Политика Конфиденциальности</h4>
-    </div>
-    
-    <div class="col-3">
-      <h2>
-        Компания
-      </h2>
-      <br>
-        <h4>О нас</h4>
-        <h4>Контакты</h4>
-        <h4>Лицензии</h4>
-        <h4>Карьера</h4>
-        <h4>Политика Конфиденциальности</h4>
-    </div>
-    <div class="col-3">
-      <h2>
-        Оставьте свою почту
-      </h2>
-      <br>
-        <input type="text" name="" id="" class="footer-Email" placeholder="Введите почту">
       </div>
-  </div> 
-</div>
+      <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'files' %}">Файлы</a>
+          </li>
+          <!-- <li class="nav-item ">
+                          <button class="btn btnKlient header__button_color-white" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem;border: 1px solid #5080C1;color: #fff;background-color: #5080C1;box-shadow: 0px 0px 20px rgba(18, 121, 255, 0.6)">Связаться</button>
+                        </li> -->
+        </ul>
+      </div>
+      <span class="nav-item ">
+        <a href="mailto:urkabestyzhev@gmail.com?subject=Письмо с сайта&body=Здравствуйте!" target="_blank"
+          class="contacts__item-text contacts__item-text_link navbar-collapse-item navbar-collapse-item_mail">
+          <i style="float: left;color: #2d7ef7; margin: 11px 5px 0px 5px;" class="gg-mail"></i>
+        </a>
+        <a href="tel:+79966304529" class="contacts__item-text contacts__item-text_link navbar-collapse-item">
+          <i style="float: left;color: #2d7ef7;  margin: 7px 15px 0px 5px;" class="gg-phone"></i>
+        </a>
 
-</div>
-<script>
-   const popup = document.querySelector('.popup');
+        <!-- <button class=" btnKlient header__button_color-white" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem;border: 1px solid #5080C1;color: #fff;background-color: #5080C1;box-shadow: 0px 0px 20px rgba(18, 121, 255, 0.6)">Связаться</button> -->
+        <button class="navbar-toggler first-button" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarToggleExternalContent9" aria-controls="navbarToggleExternalContent9"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <div class="animated-icon1"><span></span><span></span><span></span></div>
+        </button>
+        <!-- <span style="cursor:pointer;" class="navbar-toggler-icon"></span> -->
+      </span>
+
+      <div class="accordion-body visible " style="margin-top: 3px; padding: 5px; ">
+        <a href="mailto:urkabestyzhev@gmail.com?subject=Письмо с сайта&body=Здравствуйте!" target="_blank"
+          class="contacts__item-text contacts__item-text_link navbar-collapse-item navbar-collapse-item_mail">
+          <i class="gg-mail d-inline"></i>
+        </a>
+        <a href="tel:+79966304529" class="contacts__item-text contacts__item-text_link navbar-collapse-item">
+          <i class="gg-phone d-inline"></i>
+        </a>
+      </div>
+
+      </h5>
+
+    </div>
+    </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="collapse" id="navbarToggleExternalContent9">
+      <a class="btn btn-block" href="{% url 'contacts' %}">Контакты</a>
+      <a class="btn btn-block" href="{% url 'vacancies' %}">Вакансии</a>
+      <a class="btn btn-block" href="{% url 'files' %}">Файлы</a>
+      <!-- <button class="btn btn-link btn-block border-bottom m-0">Link 1</button>
+                <button class="btn btn-link btn-block border-bottom m-0">Link 2</button>
+                <button class="btn btn-link btn-block m-0">Link 3</button> -->
+
+    </div>
+  </div>
+  </div>
+
+  <div class="container">
+    <center class="hrBan" style="color: #A8A8A9; margin-bottom: 30px; margin-top: -4px">
+      <hr class="divider my-1 text-center">
+    </center>
+  </div>
+  {% block content %}
+  {% endblock %}
+
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-0 offset-sm-1 col-12 col-sm-5 col-lg-3">
+          <h2>
+            EtalonTrans
+          </h2>
+          <br>
+          <h4>
+            Lorem, ipsum dolor sit amet consectetur
+          </h4>
+          <!-- <br> -->
+          <h4>
+            Copyright 2023
+          </h4>
+        </div>
+
+        <div class="offset-0 offset-md-1 col-12 col-sm-5 col-lg-3">
+          <h2>
+            Компания
+          </h2>
+          <!-- <br> -->
+          <h4>О нас</h4>
+          <h4>Контакты</h4>
+          <h4>Лицензии</h4>
+          <h4>Карьера</h4>
+        </div>
+
+        <div class="offset-0 offset-sm-1 offset-md-0 col-12 col-sm-5 col-lg-3">
+          <h2>
+            Компания
+          </h2>
+          <!-- <br> -->
+          <h4>О нас</h4>
+          <h4>Контакты</h4>
+          <h4>Лицензии</h4>
+          <h4>Карьера</h4>
+        </div>
+        <div class="offset-0 offset-sm-1 col-5 col-lg-3">
+          <h2>
+            Оставьте свою почту
+          </h2>
+          <br>
+          <input type="text" name="" id="" class="footer-Email" placeholder="Введите почту">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    // const linksNav = document.getElementById('#');
+    document.querySelector('.first-button').addEventListener('click', function () {
+      if (Array.from(document.getElementById('navbarToggleExternalContent9').classList).includes("collapse") == true) {
+        document.getElementById('navbarToggleExternalContent9').classList.remove('collapse');
+      } else {
+        document.getElementById('navbarToggleExternalContent9').classList.add('collapse');
+      }
+
+      document.querySelector('.animated-icon1').classList.toggle('open');
+    });
+    const popup = document.querySelector('.popup');
     const popup2 = document.querySelector('.popup2');
     const popupBuy = document.querySelector('.popupBuy');
     const popupBuy2 = document.querySelector('.popupBuy2');
     const deleteForm = document.querySelector('.delete');
     const headerButton = document.querySelector('.header__button_color-white');
+    const accordionBody = document.querySelector('nav .accordion-body');
 
-    headerButton.addEventListener('click', () => {
-        popup.classList.remove('visible');
-    });
-    deleteForm.addEventListener('click', () => {
-        popup.classList.add('visible');
-    });
-    
-    // buy.addEventListener('click', () => {
-    //     popupBuy2.classList.add('visible');
-    //   });
-    //   buyTicket1.addEventListener('click', () => {
-    //     popupBuy.classList.remove('visible');
+
+    // headerButton.addEventListener('click', () => {
+    //   if (Array.from(accordionBody.classList).includes("visible") == true) {
+    //     accordionBody.classList.remove('visible');
+    //   } else {
+    //     accordionBody.classList.add('visible');
+    //   }
+
     // });
+  </script>
+  <script src="{% static '/EtalonSite/js/paralax.js' %}"></script>
 
-
-
-</script>
-<script src="{% static '/EtalonSite/js/paralax.js' %}"></script>
-
-    <!-- <link rel="stylesheet" href="https://snipp.ru/cdn/selectize.js/0.12.6/dist/css/selectize.default.css">
+  <!-- <link rel="stylesheet" href="https://snipp.ru/cdn/selectize.js/0.12.6/dist/css/selectize.default.css">
 <script src="https://snipp.ru/cdn/microplugin.js/src/microplugin.js"></script>
 <script src="https://snipp.ru/cdn/sifter.js/sifter.min.js"></script>
 <script src="https://snipp.ru/cdn/selectize.js/0.12.6/dist/js/selectize.min.js"></script>
 <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/lodash/4.10.0/lodash.js"></script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,265 +1,15 @@
 {% extends 'EtalonSite/base.html' %}
 {% block content %}
 {% load static %}
+<link href="{% static 'EtalonSite/css/vacancies.css' %}" rel="stylesheet" type="text/css"/>
 <style>
-	.slogan {
-		font-size: 56px;
-	}
-
-	.slogan-icon {
-		box-shadow: 0px 0px 20px rgba(255, 105, 18, 2);
-		height: 55px;
-		background-color: #FFEEE3;
-		border-radius: 50px;
-		padding: 10px;
-	}
-
-	.bannerInfo {
-		background-color: #181818;
-		height: auto;
-
-		color: #FCF5F3;
-		padding: 100px;
-	}
-
-	.banner_inputText {
-		border: 2px solid #B9B9B9;
-		/* // padding: 90px 3px; */
-		height: 60px;
-		border-radius: 18px;
-		padding-left: 15px;
-	}
-
-	.banner_inputText::placeholder {
-		color: #181818;
-		padding-left: 27px;
-		height: 25px;
-		background: left 5% / 15% 60% no-repeat url("https://css.gg/pin.svg");
-	}
-
-	.banner_button {
-		background-color: #181818;
-		/* border: 3px solid #181818; */
-		/* // padding: 90px 3px; */
-		height: 60px;
-		/* padding-left: 20px; */
-		margin-left: 5px;
-		border-radius: 18px;
-	}
-
-	.banner_inputText:hover {
-		border: 2px solid #FF6912;
-	}
-
-	.banner_input-click {
-		border: 2px solid #FF6912;
-		transition: all 1.5s ease;
-		box-shadow: 0px 0px 40px rgba(255, 105, 18, 0.4);
-	}
-
-	.banner-text_500 {
-		font-size: 52px;
-		font-weight: 500;
-	}
-
-	.banner-text_300 {
-		font-size: 32px;
-		font-weight: 300;
-	}
-
-	.banner-button {
-		padding: 10px;
-		border-radius: 15px;
-		margin-right: 1rem;
-		color: #FF2C75;
-		border: 1px solid #FF6912;
-		color: #fff;
-		background-color: #FF6912;
-		height: 54px;
-		width: 150px;
-	}
-
-	.banner-button-two {
-		background-color: #181818;
-		border: 1px solid #fff;
-		box-shadow: 0px 0px 0px rgba(255, 105, 18, 0.6);
-		height: 54px;
-	}
-
-	.bigNumbers {
-		background-color: #FCF5F3;
-		padding: 100px 0;
-		/* margin: 100px 0px; */
-
-	}
-
-	.bigNumbers-span_small {
-		font-size: 20px;
-		position: absolute;
-		padding: 10px 0 0 5px;
-	}
-
-	.bigNumbers-span_dollar {
-		font-size: 20px;
-		position: absolute;
-		padding: 10px 0 0 5px;
-		margin-left: -25px;
-	}
-
-	.bigNumbers-text,
-	.blogPowering-text {
-		font-size: 15px;
-		font-weight: 300;
-	}
-
-	.blogPowering-text h5 {
-		font-size: 15px;
-		font-weight: 400;
-	}
-
-	.blockImage img {
-		opacity: 0.9;
-		width: 300px;
-		height: 320px;
-		border-radius: 45px;
-	}
-
-	.blockImage-powering img {
-		opacity: 0.9;
-		width: 470px;
-		box-shadow: -20px -6px 100px rgba(255, 105, 18, 1);
-		height: 520px;
-		border-radius: 45px;
-	}
-
-	.blockImage-text {
-		color: #fff;
-		position: relative;
-		margin-top: -40px;
-	}
-
-	.block-Powering {
-		color: #000;
-		font-weight: 500;
-	}
-
-	.blogPowering-text_il {
-		margin-top: -20px;
-	}
-
-	.formBlock {
-		background-color: #181818;
-		border-radius: 35px;
-		padding: 50px 0 50px 50px;
-		color: #fff;
-		height: 450px;
-		border: 1px solid #181818;
-
-	}
-
-	.block-form-input {
-		border-radius: 40px;
-		background-color: #fff;
-		padding: 50px 50px;
-		height: 350px;
-		width: 340px;
-
-		color: #181818;
-	}
-
-	.block-form-input input {
-		border-radius: 10px;
-		height: 50px;
-		border: none;
-		margin-bottom: 12px;
-		background-color: rgb(240, 223, 218);
+	
+	.button_background__blue {
 		width: 100%;
-	}
-
-	.btnForm {
-		background-color: #FF6912;
-		color: #fff;
-		width: 100%;
-		border-radius: 10px;
-		height: 50px;
-		margin-top: 10px;
-
-	}
-
-	.block-form-input input:placeholder-shown {
-		color: #000;
-	}
-
-	.page__text {
-		font-weight: 600;
-		font-size: 2.25rem;
-		line-height: 2.625rem;
-		letter-spacing: -.04em;
-		margin-bottom: 3.275rem;
-		position: relative;
-		z-index: 1;
-		margin-left: 0.525rem;
-
-	}
-
-	.page__title {
-		font-weight: 700;
-		font-size: 4.6875rem;
-		line-height: 4.875rem;
-		letter-spacing: -.05em;
-		margin-bottom: 0.225rem;
-		margin-left: 0.525rem;
-		position: relative;
-		z-index: 1;
-	}
-
-	.page__vacancy {
-		width: calc(50% - 2.1875rem);
-		margin-right: 4.375rem;
-		margin-bottom: 4.375rem;
-	}
-
-
-	.vacancy-card__title {
-		font-weight: 600;
-		font-size: 1.5rem;
-		line-height: 1.75rem;
-		letter-spacing: -.035em;
-		margin-bottom: 0.9375rem;
-		margin-top: 3.9375rem;
-		font-weight: 700;
-	}
-
-	.vacancy-card__text_description {
-		color: rgba(0, 0, 0, .6);
-		margin-bottom: 1.5625rem;
-	}
-
-	.vacancy-card__text {
-		font-size: 1.125rem;
-		line-height: 1.625rem;
-		letter-spacing: -.04em;
-	}
-
-	.vacancie {
-		margin-top: -1.5625rem;
-	}
-
-	.vacancy-card__footer {
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-	}
-
-	.vacancy-card__button {
-		margin-right: 1rem;
-	}
-
-	.button_color_yellow {
-		background-color: #fcddcc;
-		border: 1px solid #fcddcc;
-		color: #FF6912;
+		background-color: #c6ddfe;
+		/* url('{% static ".jpg" %}') */
+		border: 1px solid #c6ddfe;
+		color: #5080C1;
 		font-weight: 600;
 		font-size: 1.0625rem;
 		line-height: 1.25rem;
@@ -275,107 +25,29 @@
 		padding: 0 1.25rem 0.0625rem;
 		display: inline-flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: left;
 		transition: .15s ease-in-out;
 		position: relative;
-		/* margin-bottom: 1rem; */
 	}
 
-	.button_background_yellow {
-		background-color: #FF6912;
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		-webkit-user-select: none;
-		color: #fff;
-		text-decoration: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		border-radius: 0.75rem;
-		height: 3.3125rem;
-		padding: 0 1.25rem 0.0625rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		transition: .15s ease-in-out;
-		position: relative;
-		border: 1px solid #FF6912;
-		z-index: 0;
-	}
-
-	.button_background_yellow:hover {
+	.button_background__blue:hover {
 		transition: .15s ease-in-out;
 		background-color: #FCF5F3;
-		color: #FF6912;
-		border: 1px solid #FF6912;
-	}
-
-	.vacancy-card__button_close {
-		font-weight: 600;
-		font-size: 1.0625rem;
-		line-height: 1.25rem;
-		letter-spacing: -.03em;
-		cursor: pointer;
-		width: auto;
-		display: inline-block;
-		max-width: none;
-		margin-right: 0;
-		color: rgba(0, 0, 0, .8);
-		border-bottom: 1px dashed rgba(0, 0, 0, .3);
+		color: #5080C1;
+		font-size: 1.1925rem;
+		border: 1px solid #5080C1;
 	}
 </style>
-
-<section class="py-5 text-center container">
-	<div class="row py-lg-5">
-		<div class="col-lg-12 col-md-12 mx-auto">
-			<h1 class="slogan">Довезём Твой Груз.
-			</h1>
-			<h1>
-				<svg xmlns="http://www.w3.org/2000/svg"
-					style="box-shadow: 0px 0px 20px rgba(255,105,18,2); height: 55px; background-color: #FFEEE3;border-radius: 50px;padding: 10px;"
-					viewBox="0 0 24 24" fill="#FF6912" class="w-6 h-6">
-					<path
-						d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z" />
-				</svg>
-				<span style="color: #FF6912;">
-					Россия.
-				</span>
-			</h1>
-			<!-- <p> -->
-			<br>
-
-			<input type="text" name="city1" onchange="inputColor()" placeholder="Выберите локацию"
-				class="banner_inputText banner_inputText-one">
-			<input type="text" name="city2" onchange="inputColor()" placeholder="Выберите локацию"
-				class="banner_inputText banner_inputText-two">
-			<button class="banner_button"><svg width="29" height="29" viewBox="0 0 24 24" fill="#fff"
-					xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" clip-rule="evenodd"
-						d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z"
-						fill="#fff" />
-				</svg></button>
-			<br>
-			<br>
-			<!-- <select placeholder="Выберите локацию" name="" id="" class="banner_inputText"> -->
-
-
-		</div>
-	</div>
-</section>
-
 
 <div class="container">
 	<div class="row">
 		<div class="col-11 offset-0 offset-xl-1">
 			<h1 class="page__title">
-				Работай с нами<span style=" color: #FF6912;">.</span>
+				Работай с нами<span style=" color: #5080C1;">.</span>
 			</h1>
 			<br>
 			<h2 class="page__text"><span
-					style="color: #FF6912; font-size: 45px;font-weight: 700;">{{vacancies.count}}</span> открытие
+					style="color: #5080C1; font-size: 45px;font-weight: 700;">{{vacancies.count}}</span> открытие
 				вакансии.</h2>
 		</div>
 	</div>
@@ -403,7 +75,7 @@
 						<!-- <div class="accordion-item"> -->
 						<!-- <h2 class="accordion-header" id="flush-headingOne"> -->
 
-						<div class="accordion-button collapsed vacancy-card__button button button_color_yellow"
+						<div class="accordion-button collapsed vacancy-card__button button button_background__blue"
 							data-bs-toggle="collapse" data-bs-target="#flush-collapse{{vacancy.id}}"
 							aria-expanded="false" aria-controls="flush-collapse{{vacancy.id}}">
 							Подробнее
@@ -449,9 +121,6 @@
 								<div class="vacancy-card__footer"><a href="mailto:urkabestyzhev@gmail.com?subject=Резюме на вакансию '{{vacancy.title}}'&body=Здравствуйте! Отправляю моё резюме.%0D%0A Цель — Хочу устроится на работу по вакансии '{{vacancy.title}}'.%0D%0A ФИО: %0D%0A Адрес: %0D%0A Номер телефона (включая код города): %0D%0A Опыт работы: %0D%0A Образование: %0D%0A Профессиональные умения и навыки: %0D%0A Дополнительная информация:" target="_blank" class="vacancy-card__button button button_background_yellow">
 										Отправить резюме
 									</a>
-									<div class="vacancy-card__button vacancy-card__button_close">
-										Свернуть
-									</div>
 								</div>
 
 
@@ -465,38 +134,6 @@
 
 	</div>
 	<br><br><br>
-	<script>
-		const city_one = document.querySelector('.banner_inputText-one');
-		const city_two = document.querySelector('.banner_inputText-two');
-		const banner_inputText = document.querySelector('.banner_inputText');
-		const cityList = document.querySelector('.cityList');
-		const cityList_span = document.querySelectorAll('.cityList input');
-		// const close = document.querySelector('.close');
-
-
-		city_one.addEventListener('click', () => {
-			cityList.classList.remove('visible');
-		});
-
-		var index = 0
-		for (let i = 0; i < cityList_span.length; i++) {
-			cityList_span[i].addEventListener('click', () => {
-				var value = cityList_span[i].value;
-				city_one.innerText = value
-				var num = [city_one, city_two]
-				num[index].value = value
-				num[index].classList.add('banner_input-click');
-				cityList_span[i].classList.add('visible');
-				index++
-
-			}
-			);
-		}
-
-
-
-	</script>
-	<script src="{% static '/EtalonSite/js/home.js' %}"></script>
-
+	
 
 	{% endblock %}
