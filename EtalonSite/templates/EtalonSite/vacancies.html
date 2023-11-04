@@ -3,7 +3,85 @@
 {% load static %}
 <link href="{% static 'EtalonSite/css/vacancies.css' %}" rel="stylesheet" type="text/css"/>
 <style>
-	
+	.numbers-big-blue {
+		font-size: 32px;
+		font-style: italic;
+		color: #5080C1;
+	}
+.file_block {
+		/* width: 130px; */
+		border-radius: 20px;
+		/* background-color: #97ccfc; */
+		color: #000;
+		/* box-shadow: inset -1px -1px 2px 1px rgba(18, 121, 255, 0.2);; */
+		/* box-shadow: -6px -35px 74px -20px rgba(210,206,206,0.45) inset; */
+		box-shadow: -6px -35px 74px -20px rgba(197, 196, 196, 0.45) inset;
+
+		/* box-shadow: 0px 0px 40px rgba(18, 121, 255, 0.2); */
+		height: 200px;
+	}
+
+
+
+.arrow-down {
+    /* margin-left: 30px; */
+	/* text-align: center; */
+    /* margin: 16px; */
+
+}
+.arrow-down span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #337AB7;
+    border-right: 5px solid #337AB7;
+    transform: rotate(45deg);
+    margin: -16px;
+    animation: arrow-down 2s infinite;
+}
+.arrow-down span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow-down span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes arrow-down {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+	.WhyChooseUs{
+		font-weight: 700;
+		font-size: 5.3rem;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		/* margin-left: 0px; */
+		position: relative;
+		z-index: 1;
+	}
+	.WhyChooseUs2{
+		font-weight: 700;
+		font-size: 3.3rem;
+		line-height: 3.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		/* margin-left: 0px; */
+		position: relative;
+		z-index: 1;
+	}
+
+
+
 	.button_background__blue {
 		width: 100%;
 		background-color: #c6ddfe;
@@ -135,5 +213,239 @@
 	</div>
 	<br><br><br>
 	
+	<div class="container-fluid" style="margin-top: 70px; margin-bottom: 100px;">
+	<div class="row">
+		<div class="col-2 offset-1">
+			<h1 class="WhyChooseUs">
+				Почему нас выбирают<span style="color: #5080C1;margin-left: 3px; font-size: 5.8rem;">?
+				</span>
+			</h1>
+			<!-- <div class="container-fluid">
+				<div class="row" style="margin-top: 60px;margin-left: 170px;">
+					<div class="" >
 
-	{% endblock %}
+							<div class="arrow-down">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							
+						</div>
+			</div>
+			<div class="" style="margin-top: 60px; margin-left: 120px;">
+
+			<div class="file_block">
+						<div class="file_block__text-top" style="padding: 10px;">	
+					<div class="file">
+						<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+										style="width: 50px; margin: 20px 10px;">
+					</div>
+						<p style="margin: 5px 10px; font-style: italic; text-decoration: none; color: #000;">							
+							Социальный пакет
+							льготы компенсации					</p>
+	
+					</div>
+				</div>
+		</div>
+				
+		</div> -->
+	<!-- </div> -->
+		</div>	
+	
+		<div class="col-5 offset-3 d-flex blockImage-powerin" style="z-index: -22;">
+			<img src="{% static 'EtalonSite/images/1.jpg'%}" class="blockImage-powering img-fluid " alt="..."
+				style="padding-top: 0px;">
+		</div>
+	</div>
+	</div>
+
+	
+	<div class="container" style="margin-left: -40px;margin-bottom: -90px;">
+		<div class="row">
+			<div class="col-2 offset-1">
+	<span class="vacancy-card__title" style="font-style: italic; color: #5080C1; font-size: 50px;;">1.</span>
+	</div></div>
+	</div>
+	<div class="container-fluid" style="">
+		<div class="row">
+			<div class="col-2 offset-1">
+			<h1 class="WhyChooseUs2" style="margin-top: 40px;">
+				Забота о сотрудниках<span style="color: #5080C1;">.</span>
+				
+			</h1>
+</div>		
+<!-- </div> -->
+<!-- <div class="row"> -->
+
+	<div class="col-2 offset-2" style="margin-top: 30px;">
+		<div class="file_block">
+			<div class="file_block__text-top" style="padding: 10px;">	
+				<div class="file">
+					<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+					style="width: 50px; margin: 20px 10px;">
+				</div>
+				<p style="margin: 5px 10px; font-style: italic; text-decoration: none; color: #000;">							
+					Конкурентный уровень оплаты труда
+				</p>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-2" style="margin-top: 30px;">
+		<div class="file_block">
+			<div class="file_block__text-top" style="padding: 10px;">	
+				<div class="file">
+					<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+									style="width: 50px; margin: 20px 10px;">
+				</div>
+					<p style="margin: 5px 10px; font-style: italic; text-decoration: none; color: #000;">							
+						Социальный пакет
+						льготы компенсации					</p>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-2" style="margin-top: 30px;">
+				<div class="file_block">
+					<div class="file_block__text-top" style="padding: 10px;">	
+						<div class="file">
+							<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+							style="width: 50px; margin: 20px 10px;">
+						</div>
+						<p style="margin: 5px 10px; font-style: italic; text-decoration: none; color: #000;">							
+							Ежегодная медкомиссия
+							диспансеризация					</p>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-2 offset-5" style="margin-top: 30px;">
+					<div class="file_block">
+						<div class="file_block__text-top" style="padding: 10px;">	
+				<div class="file">
+					<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+					style="width: 50px; margin: 20px 10px;">
+				</div>
+				<p style="margin: 5px 10px; font-style: italic; text-decoration: none; color: #000;">							
+						Повышение квалификации
+						обучения					</p>
+
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-2 " style="margin-top: 30px;">
+			<div class="file_block">
+					<div class="file_block__text-top" style="padding: 10px;">	
+				<div class="file">
+					<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+									style="width: 50px; margin: 20px 10px;">
+				</div>
+				<p style="margin: 5px 10px; font-style: italic; text-decoration: none; color: #000;">							
+						Комфортные условия
+						межсменного отдыха					</p>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-2" style="margin-top: 30px;">
+			<div class="file_block">
+				<div class="file_block__text-top" style="padding: 10px;">	
+				<div class="file">
+					<img src="{% static '/EtalonSite/images/pdf.svg' %}" alt="pdf" class="img-fluid"
+					style="width: 50px; margin: 20px 10px;">
+				</div>
+				<p style="margin: 5px 10px; font-style: italic; text-decoration: none; color: #000;">							
+					Обновленный
+					автопарк					</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>	
+		
+	</div>
+	</div>
+</div>
+</div>
+	
+<br><br><br><br>
+
+	<div class="container" style="margin-left: -40px;margin-bottom: -90px;">
+		<div class="row">
+			<div class="col-2 offset-1">
+	<span class="vacancy-card__title" style="font-style: italic; color: #5080C1; font-size: 50px;">2.</span>
+	</div></div>
+	</div>
+	<div class="container-fluid" style="">
+		<div class="row">
+			<div class="col-3 offset-1">
+			<h1 class="WhyChooseUs2" style="margin-top: 40px;">
+				Безопасность и качество<span style="color: #5080C1;">.</span>
+				
+			</h1>
+</div>		
+<!-- </div> -->
+<!-- <div class="row"> -->
+
+	<div class="col-3 offset-1" >
+		<h2 class="vacancy-card__title"><span class="numbers-big-blue">2.1 <br></span>
+			Правила безопасности</h2>
+
+		<p class="vacancy-card__text vacancy-card__text_description"><span>
+			Четкое выполнение требований и правил безопасности
+			при реализации рабочих процессов и контроль над
+			соблюдением норм с целью качественной реализации
+			производственных задач.
+			</span></p>
+	</div>
+	
+	<div class="col-3">
+		<h2 class="vacancy-card__title"><span class="numbers-big-blue">2.2 <br></span>
+			Охрана окружающей среды.</h2>
+
+		<p class="vacancy-card__text vacancy-card__text_description"><span>
+			Забота о состоянии природной среды,
+			рациональное природопользование, сохранение
+			и оздоровление окружающей среды в интересах
+			ныне живущих и будущих поколений.
+			</span></p>	
+	</div>
+			
+			<div class="col-3 offset-5">
+				<h2 class="vacancy-card__title"><span class="numbers-big-blue">2.3 <br></span>
+					Здоровье сотрудников.</h2>
+
+				<p class="vacancy-card__text vacancy-card__text_description"><span>
+					Проведение обязательной медкомиссии в клиниках с
+целью определения соответствия состояния здоровья
+сотрудника, а также для раннего выявления и
+профилактики заболеваний.
+					</span></p>
+				</div>
+				
+				<div class="col-3" >
+					<h2 class="vacancy-card__title"><span class="numbers-big-blue">2.4 <br></span>
+						благотворительные программы.</h2>
+	
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+						Оказание безвозмездной материальной помощи
+детским домам, участие в благотворительных
+программах, установка детских площадок с игровым
+и спортивным оборудованием.
+						</span></p>
+			</div>
+			
+	</div>	
+		
+	</div>
+	</div>
+</div>
+</div>
+
+<br><br><br>
+{% endblock %}
