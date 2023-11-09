@@ -22,6 +22,27 @@
 
 <body>
   <style>
+    
+.header__menu-item {
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    display: block;
+    color: rgba(0,0,0,.7);
+    margin: 0rem 1.25rem;
+    text-decoration: none;
+    letter-spacing: -.03em;
+    border-radius: 1.5rem;
+    transition:.35s ease-in-out;
+
+    /* transition: color .15s ease-in-out, .15s ease-in-out; */
+}
+
+.header__menu-item:hover {
+        transition:.45s ease-in-out;
+    padding: 0.3rem 0.8rem;
+        background-color: #f1f1f1;
+}
 
 .footer-Email{
    padding-left: 15px;
@@ -143,8 +164,8 @@
     .site-header {
       background-color: rgb(245, 245, 245, 0.7);
       transition: all 1.5s ease;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      /* border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px; */
       /* background-color: #F5F5F5 ; */
     }
 
@@ -336,11 +357,11 @@
 
 
   <nav class="site-header sticky-top  navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid" style="color: #000">
+    <div class="container" style="color: #000">
       <div class="row">
-        <div class="logotype">
+        <div class=" logotype">
           <a id="logo"
-            class="navbar-brand col-1 col-sm-7 col-md-4 offset-1 offset-sm-1 offse4t-md-1 offset-xl-1 offset-xxl-2"
+            class="navbar-brand col-4 col-sm-7 col-md-4 "
             href="{% url 'home' %}" style="color: #000;">
             <img style="width: 165px; margin-top: 10px;" src="{% static 'EtalonSite/images/ets.svg' %}" alt="логотип"
               class="img-fluid">
@@ -349,14 +370,14 @@
       </div>
       <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+          <li class="nav-item header__menu-item">
+            <a class="nav-link " href="{% url 'contacts' %}">Контакты</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a>
+          <li class="nav-item header__menu-item">
+            <a class="nav-link " href="{% url 'vacancies' %}">Вакансии</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'files' %}">Файлы</a>
+          <li class="nav-item header__menu-item">
+            <a class="nav-link " href="{% url 'files' %}">Файлы</a>
           </li>
           <!-- <li class="nav-item ">
                           <button class="btn btnKlient header__button_color-white" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem;border: 1px solid #5080C1;color: #fff;background-color: #5080C1;box-shadow: 0px 0px 20px rgba(18, 121, 255, 0.6)">Связаться</button>
@@ -397,24 +418,27 @@
     </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="collapse" id="navbarToggleExternalContent9">
-      <a class="btn btn-block" href="{% url 'contacts' %}">Контакты</a>
-      <a class="btn btn-block" href="{% url 'vacancies' %}">Вакансии</a>
-      <a class="btn btn-block" href="{% url 'files' %}">Файлы</a>
-      <!-- <button class="btn btn-link btn-block border-bottom m-0">Link 1</button>
-                <button class="btn btn-link btn-block border-bottom m-0">Link 2</button>
-                <button class="btn btn-link btn-block m-0">Link 3</button> -->
+  <center>
 
-    </div>
-  </div>
+    <div class="container ">
+      <div class="collapse" id="navbarToggleExternalContent9">
+        <a class="header__menu-item " style="margin-bottom: 5px;" href="{% url 'contacts' %}">Контакты</a>
+        <a class="header__menu-item " style="margin-bottom: 5px;" href="{% url 'vacancies' %}">Вакансии</a>
+        <a class="header__menu-item " style="margin-bottom: 5px;" href="{% url 'files' %}">Файлы</a>
+        <!-- <button class="btn btn-link btn-block border-bottom m-0">Link 1</button>
+          <button class="btn btn-link btn-block border-bottom m-0">Link 2</button>
+          <button class="btn btn-link btn-block m-0">Link 3</button> -->
+          
+        </div>
+      </div>
+    </center>
   </div>
 
-  <div class="container">
+  <!-- <div class="container">
     <center class="hrBan" style="color: #A8A8A9; margin-bottom: 30px; margin-top: -4px">
       <hr class="divider my-1 text-center">
     </center>
-  </div>
+  </div> -->
   {% block content %}
   {% endblock %}
 

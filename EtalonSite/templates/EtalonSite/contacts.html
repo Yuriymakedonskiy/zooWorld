@@ -2,12 +2,46 @@
 {% block content %}
 {% load static %}
 <link href="{% static 'EtalonSite/css/contacts.css' %}" rel="stylesheet" type="text/css"/>
+<style>
+	
+	.pageTitle {
+		color: #000;
+		font-weight: 700;
+		font-size: 4.6875rem;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		/* margin-left: 0px; */
+		position: relative;
+		z-index: 1;
+	}
+	
+	@media (min-width: 991px) {
 
+.plast{
+width: 800px;
+}
+}
+@media (min-width: 1350px) {
 
-<div class="container">
+.plast__two{
+width: 1350px;
+}
+.plast__three{
+width: 850px;
+}
+
+}
+
+.plast__block{
+	margin-top: 50px;
+}
+</style>
+
+<div class="container plast__two">
 	<div class="row">
 		<div class="col-11 offset-0 offset-xl-1">
-			<h1 class="page__title">
+			<h1 class="pageTitle">
 				Пишите в Telegram<span style="color: #5080C1;">.</span><span style=" color: #5080C1;">.</span><span
 					style=" color: #5080C1;">.</span>
 			</h1>
@@ -52,7 +86,7 @@
 		</div>
 	</div>
 </div>
-
-
+<br><br><br>
+<br><br><br>
 <br><br><br>
 {% endblock %}

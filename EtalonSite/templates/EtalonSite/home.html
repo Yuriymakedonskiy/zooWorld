@@ -4,12 +4,72 @@
 <link href="{% static 'EtalonSite/css/home.css' %}" rel="stylesheet" type="text/css" />
 
 <style>
+	.ticker {
+		display: flex;
+		overflow: hidden;
+	}
+
+	.ticker__list {
+		display: flex;
+		margin-top: 20px;
+		animation: ticker 20s infinite linear;
+	}
+
+	@media (min-width: 991px) {
+
+	.plast{
+	width: 800px;
+}
+	}
+	@media (min-width: 1350px) {
+
+	.plast__two{
+	width: 1350px;
+}
+	.plast__three{
+	width: 850px;
+}
+
+	}
+
+	.plast__block{
+		margin-top: 50px;
+	}
+	/* .ticker__list:hover{
+	animation-play-state: paused;
+} */
+	.ticker:hover {
+		animation-play-state: paused;
+	}
+
+	.ticker__item {
+		margin-right: 30px;
+	}
+
+	@keyframes ticker {
+		100% {
+			transform: translateX(-100%);
+		}
+
+	}
+
+	.xmao-item {
+		margin-top: 90px;
+	}
+
+
+
+	.vigodi-float-right {
+		/* margin-top: -50px; */
+	}
+
 	.WestSiberia .sup {
 		font-style: italic;
-		font-size: 25px;
-		margin-left: -20px;
+		font-size: 28px;
+		margin-left: -25px;
 		text-align: center;
 		vertical-align: top;
+		/* margin-bottom: 90px; */
 	}
 
 	.WestSiberia-text {
@@ -17,6 +77,29 @@
 		font-style: italic;
 		margin-left: -50px;
 
+	}
+
+	.pageText {
+		font-weight: 600;
+		font-size: 2.25rem;
+		line-height: 2.625rem;
+		letter-spacing: -.0em;
+		margin-bottom: 3.275rem;
+		position: relative;
+		z-index: 1;
+		/* margin-left: 2rem; */
+	}
+
+	.pageTitle {
+		color: #000;
+		font-weight: 700;
+		font-size: 4.6875rem;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		/* margin-left: 0px; */
+		position: relative;
+		z-index: 1;
 	}
 
 	.Uslugi a {
@@ -36,9 +119,16 @@
 		font-size: 30px;
 	}
 
+
 	.work__list-item-text_type_line {
 		border-bottom: 2px solid #30f;
 		max-width: 2.0625rem;
+	}
+
+	.work__list-item-text_type_line-width-100 {
+		border-bottom: 2px solid #30f;
+		width: 100%;
+		margin-top: -10px;
 	}
 
 	.work__list-item-text {
@@ -52,6 +142,18 @@
 
 	.work__list-item:nth-child(2n) {
 		margin-right: 0;
+	}
+
+	@media (min-width: 991px) {
+		.vacancy-card__text-float-left {
+			margin-left: -10px;
+		}
+	}
+
+	@media (max-width: 991px) {
+		.vacancy-card__text-float-left {
+			margin-top: -20px;
+		}
 	}
 
 	@media (max-width: 1200px) {
@@ -142,8 +244,7 @@
 	}
 
 	.hrefVacancies__background-blue_text-min {
-		color: rgba(245, 241, 241, 0.6);
-		width: 500px;
+		color: rgba(245, 241, 241, 0.9);
 	}
 
 
@@ -486,6 +587,10 @@
 		}
 	}
 
+	.bigNumbers {
+		display: none;
+	}
+
 	@media screen and (max-width: 576px) {
 		.blog-slider__img {
 			width: 95%;
@@ -772,31 +877,12 @@
 	}
 
 	.numbers-big-blue {
-		font-size: 32px;
-		font-style: italic;
-		color: #5080C1;
-	}
-
-	.pageText {
+		font-style: normal;
+		color: #30f;
 		font-weight: 600;
-		font-size: 2.25rem;
+		font-size: 2.15rem;
 		line-height: 2.625rem;
-		letter-spacing: -.0em;
-		margin-bottom: 3.275rem;
-		position: relative;
-		z-index: 1;
-		/* margin-left: 2rem; */
-	}
-
-	.pageTitle {
-		font-weight: 700;
-		font-size: 4.6875rem;
-		line-height: 4.875rem;
-		letter-spacing: -.05em;
-		margin-bottom: 0.225rem;
-		/* margin-left: 0px; */
-		position: relative;
-		z-index: 1;
+		letter-spacing: -.04em;
 	}
 
 	.blockAboutCompany_text {
@@ -824,8 +910,7 @@
 	}
 
 	.vacancy-card__title {
-		font-weight: 300;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		line-height: 1.75rem;
 		letter-spacing: -.035em;
 		/* margin-bottom: 0.9375rem; */
@@ -839,11 +924,18 @@
 	}
 
 	.vacancy-card__text {
-		font-size: 1.125rem;
+		font-size: 1.25rem;
 		line-height: 1.625rem;
 		letter-spacing: -.04em;
 	}
-
+	.plast__text {
+		font-size: 38px;
+		color: #000;
+		font-weight: 6000;
+		line-height: 2.25rem;
+		letter-spacing: -.05em;
+	
+	}
 
 	.header__text-big {
 		/* font-weight: 300;
@@ -925,6 +1017,81 @@
 		width: 5px;
 		top: 8px
 	}
+
+	@media screen and (max-width: 576px) {
+		.bigNumbers-text-margin {
+			margin-top: 20px;
+		}
+
+	}
+
+	.vigodi-text-md {
+		display: none;
+	}
+
+	@media (max-width: 767px) and (max-width: 767px) {
+		.vigodi-text-lg {
+			display: none;
+		}
+
+		.vigodi-text-md {
+			display: block;
+		}
+
+		.pageText {
+			line-height: 2.25rem;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.pageText {
+			font-weight: 600;
+			line-height: 2rem;
+			letter-spacing: -.04em;
+			font-size: 1.75rem;
+			line-height: 130%;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		.block-border-top-blue {
+			display: none;
+		}
+
+
+		.pageTitle {
+			font-size: 3.25rem;
+			line-height: 3.25rem;
+			/* margin-bottom: 1.25rem; */
+		}
+
+
+		.bigNumbers-text {
+			font-size: 24px;
+			text-align: left;
+		}
+
+		.importantFigures {
+			display: none;
+		}
+
+		.xmao-item {
+			margin-top: 10px;
+		}
+
+		.bigNumbers {
+			display: block;
+		}
+
+		.vigodiText-float-right {
+			float: right;
+		}
+
+
+		.vigodi-float-right {
+			margin-top: 0px;
+		}
+	}
 </style>
 
 
@@ -937,12 +1104,12 @@
 				<!-- Мы<span style=" color: #5080C1;">.</span> -->
 			</h1>
 			<br>
-			<div class="header__text">
-				<!-- <h1 class="header__text-big">  -->
-				<!-- <span style="color: #5080C1; font-size: 48px;">
+			<!-- <div class="header__text">
+				<h1 class="header__text-big">  -->
+			<!-- <span style="color: #5080C1; font-size: 48px;">
 &#8220;	
 </span> -->
-				«ЭталонТрансСервис», обладающие богатым опытом и признанием, накопленным за 10 лет работы,
+			<!-- «ЭталонТрансСервис», обладающие богатым опытом и признанием, накопленным за 10 лет работы,
 				сформировала передовое и успешное предприятие, отвечающее всероссийским принципам и стандартам ведения
 				бизнеса
 			</div>
@@ -951,17 +1118,17 @@
 				<h2><span style="color: #5080C1; font-size: 40px;">150+ </span>штатных сотрудников.</h2>
 			</div>
 
-		</div>
-		<!-- <div class="float-right"> -->
-		<!-- <div class="col-5"> -->
+		</div> -->
+			<!-- <div class="float-right"> -->
+			<!-- <div class="col-5"> -->
 
-		<div class="col d-flex justify-content-end blockImage-powering">
+			<!-- <div class="col d-flex justify-content-end blockImage-powering">
 			<img style="
-		box-shadow: 0px 20px 80px rgba(67, 126, 160, 0.4);
+		box-shadow: 0px 20px 80px rgba(67, 126, 160, 0.4); -->
 
-			/* box-shadow: -1px 10px 30px  rgba(18, 121, 255, 0.6) */
-			/* box-shadow: -20px 10px 120px -20px rgba(152, 169, 243, 0.45), -25px 0 20px -20px rgba(152, 169, 243, 0.45); */
-			" src="/static/EtalonSite/images/1.jpg" class="img-fluid" alt="...">
+			<!-- /* box-shadow: -1px 10px 30px  rgba(18, 121, 255, 0.6) */
+			/* box-shadow: -20px 10px 120px -20px rgba(152, 169, 243, 0.45), -25px 0 20px -20px rgba(152, 169, 243, 0.45); */ -->
+			<!-- " src="/static/EtalonSite/images/1.jpg" class="img-fluid" alt="..."> -->
 		</div>
 		<!-- <div class="col-12 col-lg-5 col-md-12 offset-0 offset-lg-1"> -->
 		<!-- <div class="blockImage-powering float-right"> -->
@@ -972,21 +1139,17 @@
 </div>
 
 
-<div class="container-fluid" style="margin-top: 100px;">
+<div class="container-fluid plast__two" style="margin-top: 200px; margin-bottom: 50px;">
 	<div class="row">
-		<div class="col-10 offset-1 offset-lg-2">
-			<h1 class="pageTitle" style="margin-left: -10px; margin-bottom: 50px;">
-				Фокус деятельности<span style=" color: #5080C1;">.</span>
+		<div class="col-10 offset-1">
+			<h1 class="pageTitle" style="margin-left: -10px; margin-bottom: 20px">
+				Возможности бизнеса<span style=" color: #5080C1;">.</span>
 			</h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-4 offset-lg-2" style="float: left; z-index: 22; margin-top: 10px;">
-			<div class="col-12">
-				<p class="vacancy-card__text vacancy-card__text_description"><span>
-						Комплекс работ в области транспортировки, погрузки и доставки
-						различного перечня грузов для нефтегазового сектора
-					</span></p>
+		<div class="col offset-1 offset-lg-1" style="float: left; z-index: 22; margin-top: 10px;">
+			<div class="col">
 			</div>
 
 			<h2 class="vacancy-card__title"><span class="numbers-big-blue">1.</span>
@@ -1009,21 +1172,36 @@
 					Перевозка оборудования с интерактивным
 					мониторингом текущего нахождения груза
 				</span></p>
-		</div>
-
-		<div class="col-5 offset-1 blockImage-powering" style="z-index: -22; float: right;">
-			<img src="{% static 'EtalonSite/images/1.jpg'%}" class=" img-fluid " alt="..." style="padding-top: 0px;">
-			<!-- <div class="d-flex justify-content-end"> -->
-			<div class="work__list-item" style="margin-top: -10px;">
-				<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
-
+				<div class="work__list-item" style="margin-top: -10px;">
+					<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
+						
 				</div>
 				<div class="work__list-item-text work__list-item-text_desc">
-					<p>Сопровождение и логистика предприятий нефтегазового комплекса.</p>
+					<p>Комплекс работ в области транспортировки, погрузки и доставки
+						различного перечня грузов для нефтегазового сектора.
+					</p>
 				</div>
 			</div>
+			<!-- <p class="vacancy-card__text vacancy-card__text_description"><span>	
+				Комплекс работ в области транспортировки, погрузки и доставки
+				различного перечня грузов для нефтегазового сектора
+			</span></p> -->
+		</div>
+		
+		<div class="col offset-1 blockImage-powering" style="z-index: -22; float: right; margin-top: 30px;">
+			<img src="{% static 'EtalonSite/images/1.jpg'%}" class=" img-fluid " alt="..." style="padding-top: 0px;">
+			<!-- <div class="d-flex justify-content-end"> -->
+				<!-- <div class="work__list-item" style="margin-top: -10px;">
+					<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
+						
+					</div>
+					<div class="work__list-item-text work__list-item-text_desc">
+					<p>Сопровождение и логистика предприятий нефтегазового комплекса.</p>
+				</div>
+			</div> -->
 		</div>
 	</div>
+	
 </div>
 
 </div>
@@ -1034,9 +1212,46 @@
 </div>
 
 
-<div class="container-fluid Uslugi" style="margin-top: 40px;">
+<center>
+
+	<div class="col-10 col-md-8 plast" style="color: #000; text-align: left; margin-top: 200px;">
+		<!-- <div style="z-index: 1;" class="hrefVacancies hrefVacancies__background-blue"> -->
+			<p class="plast__text"><span><span style="color: #30f;">
+				Мы предлагаем</span> выполнение подготовительно-заключительных работ для обеспечивания гидравлического
+				разрыва пласта.
+			</span></p>
+
+		<!-- </div> -->
+	<!-- </div> -->
+	
 	<div class="row">
-		<div class="col-9 offset-1 offset-lg-2">
+		<div class="col plast__block">
+
+				<p class="vacancy-card__text vacancy-card__text_description"><span>
+					<span class="numbers-big-blue">1 <br></span>
+					Завоз и вывоз оборудования, монтаж емкостей
+					для ГРП, подвоз проппанта
+				</span></p>
+			</div>
+			<div class="col plast__block">	
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+						<span class="numbers-big-blue">2 <br></span>
+						Затарка емкостей технологической жидкостью	</span></p>
+				</div>
+			<div class="col-12 plast__block">
+
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+						<span class="numbers-big-blue">3 <br></span>
+						Получение подвоз солевого раствора
+						вакуумными машинами, сопровождение ГРП
+						спецтехникой</span></p>
+				</div>
+		</div>
+</center>
+
+<div class="container-fluid Uslugi plast__two" style="margin-top: 80px;">
+	<div class="row">
+		<div class="col-10 col-md-8 offset-1">
 			<h1 class="pageTitle" style=" margin-top: 50px;">
 				Услуги<span style=" color: #5080C1;">.</span>
 			</h1>
@@ -1047,7 +1262,7 @@
 		<!-- </div> -->
 
 		<!-- <div class="row" style="margin-top:-20px;"> -->
-		<div class="col-8 col-sm-8 offset-1 offset-lg-2">
+		<div class="col-10 offset-1 ">
 			<p class="vacancy-card__text vacancy-card__text_description"><span>
 					Комплексные логистические решения в области транспортировки грузов,
 					погрузочно-разгрузочные работы, перевозка технологических жидкостей и
@@ -1056,7 +1271,7 @@
 				</span>
 			<div class="row">
 
-				<div class="col-12 col-sm-4 offset-0">
+				<div class="col">
 					<a href="mailto:urkabestyzhev@gmail.com?subject=Интерес к услуге оказываемой автокрановой техникой &body=Здравствуйте! Меня заинтересовла услуга оказываемая автокрановой техникой. Расскажите пожалуйста подробнее о условиях и деталях"
 						target="_blank">
 
@@ -1066,7 +1281,7 @@
 					</a>
 				</div>
 
-				<div class="col-12 col-sm-4 offset-0">
+				<div class="col offset-0">
 					<a href="mailto:urkabestyzhev@gmail.com?subject=Интерес к услуге оказываемой цементировочными агрегатами &body=Здравствуйте! Меня заинтересовла услуга оказываемая цементировочными агрегатами. Расскажите пожалуйста подробнее о условиях и деталях"
 						target="_blank">
 
@@ -1075,7 +1290,7 @@
 					</a>
 				</div>
 
-				<div class="col-12 col-sm-4 offset-0">
+				<div class="col offset-0">
 					<a href="mailto:urkabestyzhev@gmail.com?subject=Интерес к услуге оказываемой вакуумными машинами&body=Здравствуйте! Меня заинтересовла услуга оказываемая вакуумными машинами. Расскажите пожалуйста подробнее о условиях и деталях"
 						target="_blank">
 
@@ -1086,7 +1301,7 @@
 
 				</div>
 
-				<div class="col-12 col-sm-4 offset-0">
+				<div class="col offset-0">
 					<a href="mailto:urkabestyzhev@gmail.com?subject=Интерес к услуге оказываемой автоцистернами для перевозки технологических жидкостей &body=Здравствуйте! Меня заинтересовла услуга оказываемая автоцистернами для перевозки технологических жидкостей. Расскажите пожалуйста подробнее о условиях и деталях"
 						target="_blank">
 
@@ -1095,7 +1310,7 @@
 					</a>
 				</div>
 
-				<div class="col-12 col-sm-4 offset-0">
+				<div class="col offset-0">
 					<a href="mailto:urkabestyzhev@gmail.com?subject=Интерес к услуге оказываемой вездеходной грузоперевозящей техникой &body=Здравствуйте! Меня заинтересовла услуга оказываемая вездеходной грузоперевозящей техникой. Расскажите пожалуйста подробнее о условиях и деталях"
 						target="_blank">
 
@@ -1105,7 +1320,7 @@
 
 				</div>
 
-				<div class="col-12 col-sm-4 offset-0">
+				<div class="col offset-0">
 					<a href="mailto:urkabestyzhev@gmail.com?subject=Интерес к услуге оказываемой тракторной техникой &body=Здравствуйте! Меня заинтересовла услуга оказываемая тракторной техникой. Расскажите пожалуйста подробнее о условиях и деталях"
 						target="_blank">
 
@@ -1135,7 +1350,7 @@
 														
 													</div> -->
 			</div>
-			<div class="d-flex justify-content-end">
+			<!-- <div class="col-10 col-md-12"> -->
 				<div class="work__list-item">
 					<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
 
@@ -1153,108 +1368,254 @@
 <!-- </div> -->
 <!-- </div> -->
 
-
-
-<div class="container-fluid" style="margin-top: 100px;">
+<div class="container-fluid plast__two" style="margin-top:250px;">
 	<div class="row">
-		<div class="col-10 offset-1 offset-lg-2">
-			<h1 class="pageTitle" style=" margin-top: 50px;">
+		<div class="col-10 offset-1">
+			<h1 class="pageTitle">
 				Наше преимушество<span style=" color: #5080C1;">.</span>
 			</h1>
 			<br>
-			<h2 class="page__text"><span style="color: #5080C1; font-size: 45px;font-weight: 700;">Лидирующие позиции на рынке.
-		</h2>
-			</h2>
+			<!-- <h2 class="pageText">Лидирующие позиции на
+				рынке.
+			</h2> -->
+
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-9 col-sm-9 offset-md-1">
-			<!-- <p class="vacancy-card__text vacancy-card__text_description"><span>
+		<!-- <div style="margin-left: -10px; margin-top: 25px;"
+			class="offset-1 col-10 col-md-3 offset-md-0 vigodiText-float-right" style="margin-top: 30px;">
+			<p class="vigodi-text-lg  vacancy-card__text vacancy-card__text_description">
+				Лидирующие позиции на
+				рынке.</p>
+		</div> -->
+<!-- </div> -->
+			<!-- <div class="row"> -->
+				<!-- <div class="col-9 col-sm-9 offset-md-1"> -->
+					<!-- <p class="vacancy-card__text vacancy-card__text_description"><span>
 					Парк тяжеловесного автомобильного
 					транспорта, наличие современного
 					оборудования и производственной
 					базы для оказания регулярного
 					сервисного обслуживания техники
 				</span></p> -->
-		</div>
-	<!-- </div> -->
-		
-	<div class="blog-slider">
-		<div class="aMargin">
-			<div class="a">
-				<div class="blog-slider__wrp swiper-wrapper ">
-					<div class="blog-slider__item swiper-slide">
-						<div class="blog-slider__img">
-							<img src="{% static '/EtalonSite/images/1.jpg' %}" alt="">
-						</div>
-						<div class="blog-slider__content">
-							<h1>Безопасность и качество.</h1>
-							<div class="blog-slider__text">Ключевой приоритет, компании "ЭталонТрансСервис" направлен на
-								обеспечение и поддержание качественной жизни и здоровья
-								сотрудников, а также на сохранение природного богатства
-								окружающей среды за счет точного и строго соблюдения нормативных
-								и общепринятых требований безопасности. "ЭталонТрансСервис" гарантирует минимизацию рисков
-								при реализации
-								программы производственной безопасности
+				<!-- </div> -->
+				<!-- </div> -->
+
+				<!-- <div class="blog-slider">
+			<div class="aMargin">
+				<div class="a">
+					<div class="blog-slider__wrp swiper-wrapper ">
+						<div class="blog-slider__item swiper-slide">
+							<div class="blog-slider__img">
+								<img src="{% static '/EtalonSite/images/1.jpg' %}" alt="">
+							</div>
+							<div class="blog-slider__content">
+								<h1>Безопасность и качество.</h1>
+								<div class="blog-slider__text">Ключевой приоритет, компании "ЭталонТрансСервис"
+									направлен на
+									обеспечение и поддержание качественной жизни и здоровья
+									сотрудников, а также на сохранение природного богатства
+									окружающей среды за счет точного и строго соблюдения нормативных
+									и общепринятых требований безопасности. "ЭталонТрансСервис" гарантирует минимизацию
+									рисков
+									при реализации
+									программы производственной безопасности
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			</div>
-	<!-- <div class="container vacancie"> -->
-	
+			</div> -->
+				<!-- <div class="container vacancie"> -->
 
-		<div class="row" style="margin-top: 50px;">
 
-			<div class="col-4 offset-lg-2" style="float: left; z-index: 22;">
-				<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
-					Современное оборудование</h2>
+				<div class="row" style="margin-top: 25px;">
+					<div class="col-5 offset-1">
+						<!-- <div class="row"> -->
 
-				<p class="vacancy-card__text vacancy-card__text_description"><span>
-						Использование современного оборудования,
-						наличие скоростных мотопомп, термосных бочек
-						с возможностью работы без ппу в зимнее время
-					</span></p>
-				<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
-					Собственный автомобильный парк</h2>
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
+							Современное оборудование</h2>
 
-				<p class="vacancy-card__text vacancy-card__text_description"><span>
-						Ежегодное обновление автомобильного парка,
-						жесткий контроль и замена каждой единицы техники в
-						течение 5 лет</span></p>
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Использование современного оборудования,
+								наличие скоростных мотопомп, термосных бочек
+								с возможностью работы без ппу в зимнее время
+							</span></p>
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
+							Собственный автомобильный парк</h2>
 
-				<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
-					Разрешительные документы и лицензии</h2>
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Ежегодное обновление автомобильного парка,
+								жесткий контроль и замена каждой единицы техники в
+								течение 5 лет</span></p>
 
-				<p class="vacancy-card__text vacancy-card__text_description"><span>
-						Разрешительные документы
-						росприроднадзора, договоры водопользования
-						лицензия на утилизацию промышленных отходов
-					</span></p>
-			</div>
-			<div class="col-5 offset-1 blockImage-powering" style="z-index: -22; float: right;">
-				<img src="{% static 'EtalonSite/images/1.jpg'%}" class="blockImage-powering img-fluid " alt="..."
-					style="padding-top: 0px;">
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
+							Разрешительные документы и лицензии</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Разрешительные документы
+								росприроднадзора, договоры водопользования
+								лицензия на утилизацию промышленных отходов
+							</span></p>
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
+		Производственная база</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+							Собственный производственный цех для
+							оказания текущего ремонта транспортных
+							средств.	</span></p>
+					</div>
+
+					<div class="col offset-1 blockImage-powering" style="z-index: -22; float: right; margin-top: 30px;">
+						<img src="{% static 'EtalonSite/images/1.jpg'%}" class=" img-fluid " alt="..."
+							style="padding-top: 0px;">
+						<!-- <div class="d-flex justify-content-end"> -->
+						<div class="work__list-item" style="margin-top: -10px;">
+							<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
+
+							</div>
+							<div class="work__list-item-text work__list-item-text_desc">
+								<p>Лидирующие позиции на
+									рынке.</p>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 </div>
 </div>
-</div>
+
+
+<div class="container-fluid plast__two" style="margin-top: 200px;">
+	<div class="row">
+		<div class="col-10 col-md-7 offset-1">
+			<h1 class="pageTitle">
+				Выгоды заказчика<span style=" color: #5080C1;">.</span>
+			</h1>
+			<br>
+			<!-- <h2 class="pageText">Исполнительность и
+				пунктуальность.
+			</h2> -->
+
+		</div>
+		<div style="margin-left: -10px; margin-top: 25px;"
+			class="offset-1 offset-lg-0 col-10 col-md-3 offset-md-0 vigodiText-float-right" style="margin-top: 30px;">
+			<p class="vigodi-text-lg  vacancy-card__text vacancy-card__text_description">
+				Эффективная реализация технического задания с учетом
+				нормативных требований и конструктивных пожеланий заказчика.
+			</p>
+		</div>
+
+		<div class="row">
+			<div class="col-5 offset-1">
+				<div class="row">
+
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-2 offset-md-1 offset-lg-0"
+						style="text-align: center;">
+
+						<h2 class="vacancy-card__title"><span>1. <br></span>
+							Прозрачный бизнес</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Честность при ведении бизнеса.</span></p>
+					</div>
+
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-lg-0  offset-2 offset-md-1"
+						style="text-align: center;">
+						<h2 class="vacancy-card__title"><span class="">1. <br></span>
+							Партнерские скидки.</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Персональные предложения и
+								выгодные условия от объема.</span></p>
+
+					</div>
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-2 offset-md-1 offset-lg-0"
+						style="text-align: center;">
+
+						<h2 class="vacancy-card__title"><span>1. <br></span>
+							Индивидуальный подход</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Выполнение всех требований и
+								индивидуальных пожеланий заказчика.
+							</span></p>
+					</div>
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-lg-0  offset-2 offset-md-1"
+						style="text-align: center;">
+						<h2 class="vacancy-card__title"><span class="">1. <br></span>
+							Подкованность.</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Возможность получения пропусков
+								на всех месторождениях.</span></p>
+
+					</div>
+				</div>
+
+			</div>
+			<div class="col-5 vigodi-float-right" style="text-align: left;">
+				<div class="row">
+					<!-- <div class="col-7 offset-5"> -->
+					<div class="col-7 offset-5">
+						<p class="vigodi-text-md vacancy-card__text vacancy-card__text_description">
+							Эффективная реализация технического задания с учетом
+							нормативных требований и конструктивных пожеланий заказчика.
+						</p>
+
+						<h2 class="vacancy-card__title"><span class="">1. <br></span>
+							Подкованность.</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Возможность получения пропусков
+								на всех месторождениях.</span></p>
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
+							Подкованность.</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Возможность получения пропусков
+								на всех месторождениях.</span></p>
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
+							Подкованность.</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Возможность получения пропусков
+								на всех месторождениях.</span></p>
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">1. <br></span>
+							Подкованность.</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Возможность получения пропусков
+								на всех месторождениях.</span></p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
-<section class="py-5 container-fluid WestSiberia" style="margin-top: 100px;">
-	<div class="col-8 offset-0 offset-md-1">
+
+
+<section class="py-5 container-fluid WestSiberia plast__two" style="margin-top: 200px;">
+	<div class="col-10 offset-0 offset-md-1">
 		<h1 class="pageTitle">
 			Результат работы в Западной Сибири<span style=" color: #5080C1;">.</span>
 		</h1>
 	</div>
+
+
 	<div class="row">
 
-		<div class="col-lg-6 col-md-5">
+		<div class="importantFigures col-12 col-lg-7 col-md-7">
 			<div class="blogPowering-text">
 				<br>
 			</div>
@@ -1295,7 +1656,7 @@
 				<h1 class="slogan">
 					<span style="color: #15488f;font-size: 80px;">
 
-						+318 000
+						+320 000
 						<span class="sup">м <sup style="margin-left: -6px; font-size: 15px;">2</sup></span>
 					</span>
 					<h5 class="bigNumbers-text">
@@ -1307,13 +1668,11 @@
 
 		</div>
 		<!-- <div class="col-lg-5 col-md-5 offset-1"> -->
-		<div class="col  justify-content-end">
+		<div class="col-10 offset-1 offset-md-0 col-md-5 justify-content-end xmao-item">
 			<img src="{% static 'EtalonSite/images/xmao.png'%}"
 				class="rounded img-fluid mx-auto d-block section__img-map" alt="..." style="padding-top: 0px;">
-
-			<br>
-			<div class="d-flex justify-content-end">
-				<div class="work__list-item">
+			<div class=" offset-1 d-flex justify-content-end">
+				<div class="block-border-top-blue work__list-item">
 					<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
 
 					</div>
@@ -1325,37 +1684,175 @@
 					</div>
 				</div>
 			</div>
+			<br>
 
 		</div>
+
+		<div class="container-fluid bigNumbers" style="text-align: left;">
+			<div class="row">
+				<div class="col-5 col-sm-4 bigNumbers-text-margin">
+					<h1 class="slogan">
+						+<span style="color: #15488f;">18
+						</span>
+						<span class="bigNumbers-span_small">
+							<span style="color: #15488f;">
+								000
+								<br> км
+							</span>
+						</span>
+						<!-- <br> -->
+						<!-- <span class="bigNumbers-span_small" style="font-size: 24px;">км</span> -->
+						<h5 class="bigNumbers-text">
+							Труб перевезено
+						</h5>
+					</h1>
+				</div>
+
+				<div class="col-5 col-sm-4 bigNumbers-text-margin">
+					<h1 class="slogan">
+						+<span style="color: #15488f;">150</span>
+						<span class="bigNumbers-span_small">
+							<span style="color: #15488f;">
+								000
+								<br> тонн
+							</span>
+						</span>
+						<!-- <br> -->
+						<!-- <span class="bigNumbers-span_small" style="font-size: 24px;">км</span> -->
+						<h5 class="bigNumbers-text">
+							Проппанта и хим. реагентов
+						</h5>
+					</h1>
+				</div>
+
+				<div class="offset-2 offset-sm-0 col-12 col-sm-4 bigNumbers-text-margin">
+					<h1 class="slogan">
+						+<span style="color: #15488f;">320</span>
+						<span class="bigNumbers-span_small">
+							<span style="color: #15488f;">
+								000
+								<br>
+								<span class="">м <sup style="margin-left: -6px; font-size: 15px;">2</sup></span>
+							</span>
+
+						</span>
+						<!-- <br> -->
+						<!-- <span class="bigNumbers-span_small" style="font-size: 24px;">км</span> -->
+						<h5 class="bigNumbers-text">
+							Жидкости затарили </h5>
+					</h1>
+				</div>
+
+				<div class="offset-2 col-8">
+					<div class="work__list-item">
+						<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
+
+						</div>
+						<div class="work__list-item-text work__list-item-text_desc">
+							<p>«ЭталонТрансСервис», обладающие богатым опытом и признанием, накопленным за 10 лет
+								работы,
+								сформировала передовое и успешное предприятие, отвечающее всероссийским принципам и
+								стандартам ведения бизнеса
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	</div>
 	</div>
 </section>
 
 
-<div class="container hrefVacancies" style="margin-top: 50px; margin-bottom: 50px;">
-	<div class="hrefVacancies-shadow"
-		style="float: left; width: 10px; height: 10px;margin: -30px 0 0 -35px; box-shadow:  0px 0px 90px 100px rgba(255, 255, 255, 0.6); border-radius: 40px;">
-	</div>
-	<div class="hrefVacancies__background-blue">
-		<div class="hrefVacancies__background-blue-svg">
-			<img src="{% static 'EtalonSite/images/bolt.svg'%}" class="" style="margin-bottom: 12px;">
-			<!-- <img src="{% static 'EtalonSite/images/bolt.svg'%}" class="" style="margin-bottom: 12px; padding: 5px; border: 2px solid #d6cdcd; border-radius: 20px; background-color: rgb(35, 71, 160);"> -->
+<div class="container-fluid plast__two" style="margin-top: 200px;">
+	<div class="row">
+		<div class="col-10 col-md-7 offset-1">
+			<h1 class="pageTitle">
+				Профильная аккредитация<span style=" color: #5080C1;">.</span>
+			</h1>
+			<br>
+			<!-- <h2 class="pageText">
+				Допуск к оказанию транспортных услуг
+				Профессионализм и ответственность.
+			</h2> -->
+
 		</div>
-		<h2 style="font-weight: 800;">Вам Стоит
-			<span style="color: #FEC451;">
-				Попробовать
-			</span>
-		</h2>
-		<p class="hrefVacancies__background-blue_text-min d-flex mx-auto" style="font-size: 22px;">Мы открыли заявки на
-			{{vacancies.count}}
-			вакансий. Посмотрите, может одна из них вас заинтересует.</p>
-		<a href="{% url 'vacancies' %}">
-			<button class="hrefVacancies__button_background__blue">Посмотреть</button>
-		</a>
+		<div style=" margin-top: 25px;" class="offset-1 col-9 col-lg-3 offset-lg-0 vigodiText-float-right"
+			style="margin-top: 30px;">
+			<p style="" class="vacancy-card__text vacancy-card__text-float-left vacancy-card__text_description">
+				Репутация качества и уровня оказываемых услуг, подтвержденная многолетним опытом, и
+				наличие профильной аккредитации в отрасли, признанной крупнейшими игроками рынка</p>
+		</div>
+
+		<!-- <div class=""> -->
+		<div class="col offset-1">
+			<div class="row">
+
+				<div class="col" style="margin-top: 50px;">
+					<img style="margin-top: 15px;" src="{% static 'EtalonSite/images/rn_yugan2.png'%}" alt="">
+				</div>
+				<div class="col " style="margin-top: 50px;">
+					<img src="{% static 'EtalonSite/images/hm.svg'%}" alt="">
+				</div>
+				<div class="col " style="margin-top: 50px;">
+					<img src="{% static 'EtalonSite/images/lukoil1.png'%}" alt="">
+				</div>
+				<!-- </div> -->
+
+				<div class="col" style="margin-top: 50px;">
+					<img src="{% static 'EtalonSite/images/sibneft.png'%}" alt="">
+				</div>
+
+				<div class="col" style="margin-top: 50px;">
+					<img style="margin-top: 50px;" src="{% static 'EtalonSite/images/slavneft1.png'%}" alt="">
+				</div>
+				<div class="col" style="margin-top: 50px;">
+					<img style="margin-top: 39px;" src="{% static 'EtalonSite/images/kondaneft2.png'%}" alt="">
+				</div>
+			</div>
+		</div>
 	</div>
+	<!-- <div class="col">
+							
+							</div>
+								<div class="col-3 offset-1">
+									<img src="{% static 'EtalonSite/images/slavneft1.png'%}" alt="">
+								</div>
+								</div> -->
+</div>
+</div>
 </div>
 
+
+
+	<div class="col-12 col-md-9 mx-auto plast__three" style="margin-top: 150px; margin-bottom: 100px;">
+		<div class="hrefVacancies-shadow"
+			style="z-index: 2; float: left; width: 1px; height: 1px;margin: 20px 0 0 20px;background-color: rgba(255, 255, 255, 0.6);
+			 box-shadow:  0px 0px 70px 70px rgba(255, 255, 255, 0.6); border-radius: 40px;">
+		</div>
+		<div style="z-index: 1;" class="hrefVacancies hrefVacancies__background-blue">
+			<div class="hrefVacancies__background-blue-svg">
+				<img src="{% static 'EtalonSite/images/bolt.svg'%}" class="" style="margin-bottom: 12px;">
+				<!-- <img src="{% static 'EtalonSite/images/bolt.svg'%}" class="" style="margin-bottom: 12px; padding: 5px; border: 2px solid #d6cdcd; border-radius: 20px; background-color: rgb(35, 71, 160);"> -->
+			</div>
+			<h2 style="font-weight: 800;">Вам Стоит
+				<span style="color: #FEC451;">
+					Попробовать
+				</span>
+			</h2>
+			<div class="col-8 mx-auto">
+				<p class="hrefVacancies__background-blue_text-min " style="font-size: 22px;">Мы открыли заявки на
+					{{vacancies.count}}
+					вакансий. Посмотрите, может одна из них вас заинтересует.</p>
+			</div>
+			<a href="{% url 'vacancies' %}">
+				<button class="hrefVacancies__button_background__blue">Посмотреть</button>
+			</a>
+	</div>
+</div>
+</div>
 
 
 
@@ -1539,82 +2036,78 @@
 
 
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-10 offset-1 offset-lg-2">
-					<h1 class="pageTitle" style="margin-top: 50px;">
-						Департаменты компании<span style=" color: #5080C1;">.</span>
-					</h1>
-					<br>
-					<h2 class="pageText"><span style="color: #5080C1; font-size: 45px;font-weight: 700;">Работаем
-							вместе
-					</h2>
-				</div>
-			</div>
-		<!-- </div>
+<div class="container-fluid plast__two" style="margin-top: 200px;">
+	<div class="row">
+		<div class="col-10 col-md-7 offset-1">
+			<h1 class="pageTitle" >
+				Департаменты компании<span style=" color: #5080C1;">.</span>
+			</h1>
+			<br>
+			<!-- <h2 class="pageText">Работаем
+				вместе
+			</h2> -->
+		</div>
+	</div>
+	<!-- </div>
 		<div class="container-fluid vacancie"> -->
-			<!-- <div class="row"> -->
-				<div class="col-8 offset-1 offset-lg-2">
-					<div class="accordion accordion-flush" id="accordionFlushExample">
-						<div class="accordion-button button_background__blue" data-bs-toggle="collapse"
-							data-bs-target="#flush-collapseTeamWork" aria-expanded="false"
-							aria-controls="flush-collapseTeamWork">
-							Командная работа </div>
-						<!-- </h2> -->
-						<div id="flush-collapseTeamWork" class="accordion-collapse collapse"
-							aria-labelledby="flush-headingTeamWork" data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">
-								<p class="vacancy-card__text vacancy-card__text_description"><span>
-										Комплексные логистические решения в области транспортировки грузов,
-										погрузочно-разгрузочные работы, перевозка технологических жидкостей и
-										отходов нефтегазового сектора по средствам специального
-										технического оборудования и собственного автомобильного парка
-									</span>
-								<div class="row">
+	<!-- <div class="row"> -->
+	<div style="margin-top: -20px;" class="col-8 col-lg-10 offset-1 offset-lg-1">
+		<div class="col">
+			<img src="/static/EtalonSite/images/ets.svg" alt="" class="img-fluid">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-8 col-lg-10 offset-2 offset-md-2 offset-lg-1 ">
+			<!-- <p class="vacancy-card__text vacancy-card__text_description"><span>
+					За годы развития ООО «ЭталонТрансСервис» удалось качественно
+					расширить штат сотрудников и организовать необходимые отделы
+					компании, обеспечивающие оказание первоклассных услуг</span>
+					 -->
 
-									<div class="col-12 col-sm-4 offset-0">
-										<h2 class="vacancy-card__title"><span class="numbers-big-blue">1.</span>
-											Диспетчерская служба</h2>
-										<p class="vacancy-card__text vacancy-card__text_description"><span>
-												Оперативное реагирование и решение экстренных задач, сбор и анализ
-												информации</span>
-										</p>
-									</div>
 
-									<div class="col-12 col-sm-4 offset-0">
-										<h2 class="vacancy-card__title"><span class="numbers-big-blue">2.</span>
-											Штатные механики</h2>
-										<p class="vacancy-card__text vacancy-card__text_description"><span>
-												Сварщики, слесари и механики, занимающиеся оперативным обслуживанием
-												техники</span>
-										</p>
-									</div>
+			<div class="row">
+				<div class="col offset-0">
+					<h2 class="vacancy-card__title"><span class="numbers-big-blue">1.</span>
+						Диспетчерская служба</h2>
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+							Оперативное реагирование и решение экстренных задач, сбор и анализ
+							информации</span>
+					</p>
+				</div>
 
-									<div class="col-12 col-sm-4 offset-0">
-										<h2 class="vacancy-card__title"><span class="numbers-big-blue">3.</span>
-											Финансовая служба и бухгалтерия</h2>
-										<p class="vacancy-card__text vacancy-card__text_description"><span>
-												Отдел по управлению экономической политикой предприятия и оборотными
-												средствами</span></p>
-									</div>
+				<div class="col offset-0">
+					<h2 class="vacancy-card__title"><span class="numbers-big-blue">2. <br></span>
+						Штатные механики</h2>
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+							Сварщики, слесари и механики, занимающиеся оперативным обслуживанием
+							техники</span>
+					</p>
+				</div>
 
-									<div class="col-12 col-sm-4 offset-0">
-										<h2 class="vacancy-card__title"><span class="numbers-big-blue">4.</span>
-											Кадровая служба</h2>
-										<p class="vacancy-card__text vacancy-card__text_description"><span>
-												Поиск персонала, мониторинг дисциплины и правил трудового распорядка,
-												организация
-												системы льгот</span></p>
-									</div>
+				<div class="col offset-0">
+					<h2 class="vacancy-card__title"><span class="numbers-big-blue">3.</span>
+						Финансовая служба и бухгалтерия</h2>
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+							Отдел по управлению экономической политикой предприятия и оборотными
+							средствами</span></p>
+				</div>
 
-									<div class="col-12 col-sm-4 offset-0">
-										<h2 class="vacancy-card__title"><span class="numbers-big-blue">5.</span>
-											Специалист по от, тб и бдд</h2>
-										<p class="vacancy-card__text vacancy-card__text_description"><span>
-												Мониторинг рабочей безопасности и обучение</span></p>
-									</div>
+				<div class="col">
+					<h2 class="vacancy-card__title"><span class="numbers-big-blue">4. <br> </span>
+						Кадровая служба</h2>
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+							Поиск персонала, мониторинг дисциплины и правил трудового распорядка,
+							организация
+							системы льгот</span></p>
+				</div>
 
-									<!-- <div class="container mx-auto">
+				<div class="col">
+					<h2 class="vacancy-card__title"><span class="numbers-big-blue">5.</span>
+						Специалист по от, тб и бдд</h2>
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+							Мониторинг рабочей безопасности и обучение</span></p>
+				</div>
+				<!-- <div class="container mx-auto">
 													<div class="block-gidrav" style="color: #fff; background-color: #3B4495;">
 	
 														<h2 class="text-center">Обеспечение гидравлического
@@ -1634,93 +2127,183 @@
 														</div>
 														
 													</div> -->
-								</div>
+													<div class="col-8 plast__two">
+														<div class="work__list-item">
+															<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line-width-100">
+													
+															</div>
+															<div class="work__list-item-text work__list-item-text_desc">
+																<p>За годы развития ООО «ЭталонТрансСервис» удалось качественно
+																	расширить штат сотрудников и организовать необходимые отделы
+																	компании, обеспечивающие оказание первоклассных услуг
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
 
-							</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="container-fluid plast__two" style="margin-top: 200px;">
+	<div class="row">
+		<div class="col-6 offset-1 offset-lg-2">
+			<h1 class="pageTitle" >
+				Наши партнеры<span style=" color: #5080C1;">.</span>
+			</h1>
+			<br>
+			<!-- <h2 class="pageText">Работаем
+				вместе
+			</h2> -->
+		</div>
+	</div>
+</div>
+
+<div class="ticker" style="margin-bottom: 100px;">
+	<div class="ticker__list">
+		<a href="http://www.mecamineft.com/">
+
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/mekamineft1.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://vk.com/everbrightenergy">
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/svetEnergy1.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://calfrac.com/">
+
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/calfrac1.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://yung.rosneft.ru/about/Glance/OperationalStructure/Dobicha_i_razrabotka/Zapadnaja_Sibir/yung/">
+			<div class="ticker__item">
+				<img style="margin-right: -40px;" src="{% static 'EtalonSite/images/rn_yugan.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://market.neftegaz.ru/catalog/company/358249-katkoneft/">
+
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/katko1.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://www.integra.ru/">
+			<div class="ticker__item">
+				<img style="margin-top: 10px;" src="{% static 'EtalonSite/images/logo-integra2.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://www.slb.ru/">
+			<div class="ticker__item">
+				<img style="margin-top: 40px;" src="{% static 'EtalonSite/images/Schlumberger2.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://www.gisns.ru/">
+			<div class="ticker__item">
+				<img style="margin-top: 20px;" src="{% static 'EtalonSite/images/Gisnslogo1.png'%}" alt="">
+			</div>
+		</a>
+		<a href="https://tubingrent.ru/">
+			<div class="ticker__item" style="margin-top: 20px;">
+				<img src="{% static 'EtalonSite/images/tubing2.png'%}" alt="">
+			</div>
+		</a>
+	</div>
+</div>
+
+
+<!-- 
+
+<section class="py-5 text-center container">
+	<div class="row py-lg-5">
+		<div class="col-lg-12 col-md-12 mx-auto">
+			<h1 class="pageTitle">Возможности бизнеса</h1>
+			<div class="row py-lg-5">
+
+				<div class="col-lg-4 col-md-6 mx-auto">
+					<div class="blockImage">
+						<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
+							class="img-fluid" alt="...">
+						<div class="blockImage-text">
+							<h5>Сопровождение и логистика предприятий нефтегазового комплекса</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mx-auto">
+					<div class="blockImage">
+						<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
+							class="img-fluid" alt="...">
+						<div class="blockImage-text">
+							<h5>Lorem ipsum dolor, sit </h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mx-auto">
+					<div class="blockImage">
+						<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
+							class="img-fluid" alt="...">
+						<div class="blockImage-text">
+							<h5>Lorem ipsum dolor, sit </h5>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
+</section>
+</div> -->
 
-
-
-
-		<section class="py-5 text-center container">
-			<div class="row py-lg-5">
-				<div class="col-lg-12 col-md-12 mx-auto">
-					<h1 class="pageTitle">Возможности бизнеса</h1>
-					<div class="row py-lg-5">
-
-						<div class="col-lg-4 col-md-6 mx-auto">
-							<div class="blockImage">
-								<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-									class="img-fluid" alt="...">
-								<div class="blockImage-text">
-									<h5>Сопровождение и логистика предприятий нефтегазового комплекса</h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 mx-auto">
-							<div class="blockImage">
-								<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-									class="img-fluid" alt="...">
-								<div class="blockImage-text">
-									<h5>Lorem ipsum dolor, sit </h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 mx-auto">
-							<div class="blockImage">
-								<img src="https://sun9-56.userapi.com/impg/yxyPaX1rHFvt78yunaIRABsg9uYMB1-sNkZi2A/rN8oqmmeTLo.jpg?size=1080x810&quality=95&sign=58d7b954792fd31bb7114aace47a179f&type=album"
-									class="img-fluid" alt="...">
-								<div class="blockImage-text">
-									<h5>Lorem ipsum dolor, sit </h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-		</section>
-	</div>
-
-	</center>
-
-</div>
 
 <br><br><br>
-<!-- <script>
-	const city_one = document.querySelector('.banner_inputText-one');
-	const city_two = document.querySelector('.banner_inputText-two');
-	const banner_inputText = document.querySelector('.banner_inputText');
-	const cityList = document.querySelector('.cityList');
-	const cityList_span = document.querySelectorAll('.cityList input');
-	// const close = document.querySelector('.close');
+<script>
+	var ticker = document.querySelector('.ticker')
+		, list = document.querySelector('.ticker__list')
+		, clone = list.cloneNode(true)
+
+	ticker.append(clone)
+	// const city_one = document.querySelector('.banner_inputText-one');
+	// const city_two = document.querySelector('.banner_inputText-two');
+	// const banner_inputText = document.querySelector('.banner_inputText');
+	// const cityList = document.querySelector('.cityList');
+	// const cityList_span = document.querySelectorAll('.cityList input');
+	// // const close = document.querySelector('.close');
 
 
-	city_one.addEventListener('click', () => {
-		cityList.classList.remove('visible');
-	});
+	// city_one.addEventListener('click', () => {
+	// 	cityList.classList.remove('visible');
+	// });
 
-	var index = 0
-	for (let i = 0; i < cityList_span.length; i++) {
-		cityList_span[i].addEventListener('click', () => {
-			var value = cityList_span[i].value;
-			city_one.innerText = value
-			var num = [city_one, city_two]
-			num[index].value = value
-			num[index].classList.add('banner_input-click');
-			cityList_span[i].classList.add('visible');
-			index++
+	// var index = 0
+	// for (let i = 0; i < cityList_span.length; i++) {
+	// 	cityList_span[i].addEventListener('click', () => {
+	// 		var value = cityList_span[i].value;
+	// 		city_one.innerText = value
+	// 		var num = [city_one, city_two]
+	// 		num[index].value = value
+	// 		num[index].classList.add('banner_input-click');
+	// 		cityList_span[i].classList.add('visible');
+	// 		index++
 
-		}
-		);
-	}
+	// 	}
+	// 	);
+	// }
 
 
 
-</script> -->
+</script>
 <script src="{% static '/EtalonSite/js/home.js' %}"></script>
 
 
