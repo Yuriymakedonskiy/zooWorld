@@ -1,0 +1,486 @@
+{% extends 'zooWorldSite/base.html' %}
+{% block content %}
+{% load static %}
+<title>Билеты</title>
+<meta name="robots" content="index-follow">
+<meta name="description"
+	content="Мы предоставили всю информацию по поводу билетов.">
+<meta name="keywords"
+	content="Билеты, Стоимость билета, график работы, льготные билеты, Выставка">
+
+<style>
+	.pageTitle {
+		color: #000;
+		font-weight: 700;
+		font-size: 4.6875rem;
+		/* margin-left: 15px; */
+		margin-top: 80px;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		/* margin-left: 0px; */
+		position: relative;
+		z-index: 1;
+	}
+
+	.page__text {
+		/* margin-left: 15px; */
+	}
+
+
+	@media (min-width: 991px) {
+
+		.plast {
+			width: 800px;
+		}
+	}
+
+	@media (min-width: 1350px) {
+
+		.plast__two {
+			width: 1350px;
+		}
+
+		.plast__three {
+			width: 850px;
+		}
+
+	}
+
+	.plast__block {
+		margin-top: 50px;
+	}
+
+	.telegramId {
+		cursor: pointer;
+	}
+
+	.telegramId:hover {
+		transition: .30s ease-in-out;
+		color: #30f;
+		/* font-size: 1.1925rem; */
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	tbody {
+		display: table-row-group;
+		vertical-align: middle;
+		border-color: inherit;
+	}
+
+	table td {
+		padding: 15px;
+		border: 1px solid rgb(133, 105, 243);
+		table-layout: auto;
+	}
+</style>
+
+<section>
+<div class="container">
+	<div class="row">
+		<div class="dp-content-inner" style="color: rgb(255, 255, 255);">
+			<p></p>
+			<blockquote style="text-align: center;"></blockquote>
+			<h4 style="text-align: center;">Тбилисский зоопарк работает&nbsp; ежедневно с 09:00 до 17:00</h4>
+			<h4 style="text-align: center;">&nbsp;(вход до 16:00)</h4>
+			<p style="text-align: center;">
+				Стоимость взрослого билета -1000р.<br></p>
+			<center>
+
+				<table cellspacing="0" cellpadding="0" border="1">
+				<tbody>
+					<tr>
+						<td>
+							<p align="center">
+								Выставка
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Режим работы
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Санитарный день
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Дом птиц
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 09:00 до 16:45, <br>
+								в свободном режиме
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Нет
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Слоновник
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 09:00 до 16:45, <br>
+								в свободном режиме <br></p>
+						</td>
+						<td>
+							<p align="center">
+								Нет
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Ночной мир
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 10:00 до 16:45, <br>
+								в свободном режиме
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Среда<br></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Животные Африки
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 10:00 до 16:45, <br>
+								в свободном режиме&nbsp;
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Нет
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Фауна Китая
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 09:00 до 16:45,
+							</p>
+							<p align="center">
+								в свободном режиме
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Нет
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Змеиное сафари
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Сеансы: 10:00,11:00,12:00, 13:00,14:00,15:00,16:00&nbsp;по билетам
+							</p>
+							<p align="center">
+								в экскурсионном режиме.&nbsp;
+							</p>
+							<p align="center">
+								стоимость билета-300р
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Четверг
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Обезьяны
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 09:00 до 16:45, <br>
+								в свободном режиме
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Нет
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Террариум
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 09:00 до 16:45, <br>
+								в свободном режиме
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Вторник
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Птицы и бабочки
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 09:00 до 16:45,<br>
+								в свободном режиме<br></p>
+						</td>
+						<td>
+							<p align="center">
+								Нет
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Инсектопия
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 10:00 до 16:45, <br>
+								в свободном режиме
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Понедельник
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Удивительный мир рептилий
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 11:00 до 16:00, касса <br>
+								до 16:30 по билетам,
+							</p>
+							<p align="center">
+								стоимость билета-300р
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Понедельник
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Арахноландия
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Сеансы: 11:00,12:00,13:00,14:00,15:00,16:00<br>
+								по билетам в экскурсионном режиме;
+							</p>
+							<p align="center">
+								стоимость билета -300р
+							</p>
+							<p align="center"><br></p>
+						</td>
+						<td>
+							<p align="center">
+								Понедельник
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Комплексная выставка
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Сеансы: 11:00,12:00,13:00,14:00,15:00,16:00<br>
+								по билетам <br>
+								в экскурсионном режиме,
+							</p>
+							<p align="center">
+								стоимость билета-300р
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Понедельник
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="center">
+								Экзотариум
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								С 11:00 до 16:30, касса <br>
+								до 16:00 по билетам, стоимость билета-300р
+							</p>
+						</td>
+						<td>
+							<p align="center">
+								Среда
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">
+							&nbsp;
+							<p style="text-align: center;">
+								Ластоногие
+							</p>
+						</td>
+						<td colspan="1">
+							&nbsp;
+							<p style="text-align: center;"></p>
+							<p>
+								&nbsp;
+							</p>
+							<p style="text-align: center;">
+								С 9:00&nbsp; до 16:45 в свободном режиме
+							</p>
+							<p><br></p>
+							<p></p>
+							<p style="text-align: center;"><br></p>
+						</td>
+						<td colspan="1">
+							&nbsp;
+							<p style="text-align: center;">
+								Нет
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">
+							&nbsp;
+							<p style="text-align: center;">
+								Ядовитые змеи
+							</p>
+						</td>
+						<td colspan="1">
+							<p style="text-align: center;">
+								с 11:00 до 16:30 <br></p>
+							<p style="text-align: center;">
+								касса до 16:00<br></p>
+							<p style="text-align: center;">
+								по билетам
+							</p>
+							<p style="text-align: center;">
+								стоимость билета -300р, билеты&nbsp; можно&nbsp; приобрести&nbsp;
+							</p>
+							<p style="text-align: center;">
+								в терминале,&nbsp; в сувенирном&nbsp; магазине&nbsp; на Красной&nbsp; Пресне.&nbsp;
+							</p> <br>
+						</td>
+						<td colspan="1">
+							&nbsp;
+							<p style="text-align: center;">
+								Среда
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+
+			<br>
+			<br>
+			<p style="text-align: center;"><b></b><b>Бесплатный вход в зоопарк по льготным билетам: </b></p>
+		</ul>
+		<ul style="text-align: left;">
+			<li>для детей до 17 лет включительно (от 14 лет и старше – по предъявлению паспорта);</li>
+				<li>
+					для студентов очной формы обучения образовательных учреждений среднего и высшего образования (по
+					предъявлению действительного студенческого билета, либо социальной карты учащегося/студента);</li>
+			</ul>
+			<ul style="text-align: left;">
+				<li>
+					для военнослужащих срочной службы и курсантов военных училищ (по предъявлению военного билета);</li>
+			</ul>
+			<ul style="text-align: left;">
+				<li>
+					для участников боевых действий (по предъявлению удостоверения участника боевых действий);</li>
+			</ul>
+			<ul style="text-align: left;">
+				<li>
+					для инвалидов (по предъявлению пенсионного удостоверения, справки о подтверждении инвалидности либо
+					социальной карты);</li>
+			</ul>
+			<ul style="text-align: left;">
+				<li>
+					для пенсионеров (по предъявлению пенсионного удостоверения, паспорта либо социальной карты);</li>
+			</ul>
+			<ul style="text-align: left;">
+				<li>
+					для многодетных родителей (по удостоверению многодетных родителей либо паспорту, если там записано
+					три ребёнка и более).</li>
+			</ul>
+			<p></p>
+			<div><b><br></b></div>
+			<div><b>Необходимо предъявить документ, подтверждающий льготу. Льготное посещение действительно только для
+					граждан РФ!</b></div>
+			<p></p>
+		</div>
+	</div>
+</div>
+</section>
+
+
+<br><br><br>
+<br><br><br>
+<br><br><br>
+{% endblock %}

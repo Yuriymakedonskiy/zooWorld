@@ -1,0 +1,526 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
+
+  <title>zooWorld</title>
+</head>
+
+<body>
+  <style>
+    .footer {
+      font-size: 0.9375rem;
+      line-height: 1.0625rem;
+      background-color: rgb(44, 14, 164,.9);
+      letter-spacing: -.04em;
+      padding: 1.5625rem 0;
+      color: #b7b7b7;
+      /* border-radius: 25px 25px 0 0; */
+      text-align: center;
+    }
+
+    .layout__footer {
+      z-index: 0;
+    }
+
+    .inner {
+      width: 100%;
+      max-width: 90rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
+    }
+
+    @keyframes appear {
+      0% {
+        opacity: .8;
+        transform: scale(.5, .5);
+      }
+
+      70% {
+        opacity: .3;
+        transform: scale(1, 1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(.5, .5);
+      }
+    }
+
+    @-webkit-keyframes appear {
+      0% {
+        opacity: .8;
+        -webkit-transform: scale(.5, .5);
+      }
+
+      70% {
+        opacity: .3;
+        -webkit-transform: scale(1, 1);
+      }
+
+      100% {
+        opacity: 0;
+        -webkit-transform: scale(.5, .5);
+      }
+    }
+
+    .cursor {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0 -20px;
+      border-radius: 50%;
+      background: #30f;
+      animation: appear .2s;
+      -webkit-animation: appear .2s;
+    }
+
+    .header__menu-item {
+      font-weight: 600;
+      font-size: 1.0625rem;
+      line-height: 1.25rem;
+      display: block;
+      color: rgba(0, 0, 0, .7);
+      margin: 0rem 1.25rem;
+      text-decoration: none;
+      letter-spacing: -.03em;
+      border-radius: 1.5rem;
+      transition: .35s ease-in-out;
+
+      /* transition: color .15s ease-in-out, .15s ease-in-out; */
+    }
+
+    .header__menu-item-collapse {
+      font-weight: 600;
+      font-size: 1.0625rem;
+      line-height: 1.25rem;
+      display: block;
+      color: rgba(0, 0, 0, .7);
+      margin: .2rem 1.25rem;
+      text-decoration: none;
+      letter-spacing: -.03em;
+      border-radius: 1.5rem;
+      transition: .3s ease-in-out;
+
+      /* transition: color .15s ease-in-out, .15s ease-in-out; */
+    }
+
+    .header__menu-item:hover {
+      transition: .45s ease-in-out;
+      padding: 0.3rem 0.8rem;
+      background-color: #f1f1f1;
+    }
+
+    .header__menu-item-collapse:hover {
+      transition: .2s ease-in-out;
+      padding: 0.7rem 0rem;
+      background-color: #f1f1f1;
+    }
+
+
+    .animated-icon1,
+    .animated-icon2,
+    .animated-icon3 {
+      width: 30px;
+      height: 20px;
+      position: relative;
+      margin: 0px;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      -o-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .animated-icon1 span,
+    .animated-icon2 span,
+    .animated-icon3 span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+    }
+
+    .animated-icon1 span {
+      background: #2d7ef7;
+    }
+
+    .animated-icon2 span {
+      background: #e3f2fd;
+    }
+
+    .animated-icon3 span {
+      background: #f3e5f5;
+    }
+
+    .animated-icon1 span:nth-child(1) {
+      top: 0px;
+    }
+
+    .animated-icon1 span:nth-child(2) {
+      top: 10px;
+    }
+
+    .animated-icon1 span:nth-child(3) {
+      top: 20px;
+    }
+
+    .animated-icon1.open span:nth-child(1) {
+      top: 11px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+
+    .animated-icon1.open span:nth-child(2) {
+      opacity: 0;
+      left: -60px;
+    }
+
+    .animated-icon1.open span:nth-child(3) {
+      top: 11px;
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    }
+*{
+  color: aliceblue;
+}
+    body {
+      background-color: rgb(44, 14, 164,.9);
+     
+    }
+
+    #navbarToggleExternalContent9 {
+      /* background-color: rgb(245, 245, 245, 0.7); */
+      margin-left: 10px;
+    }
+
+    .site-header {
+      background-color: rgb(245, 245, 245, 0.7);
+      transition: all 1.5s ease;
+      /* border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px; */
+      /* background-color: #F5F5F5 ; */
+    }
+
+
+    #navbarToggleExternalContent9 a {
+      color: #181818;
+      /* background-color: rgb(245, 245, 245, 0.7); */
+      transition: all 1.5s ease;
+
+      /* font-weight: 300; */
+      opacity: 0.8;
+    }
+
+
+    #navbarToggleExternalContent9:hover,
+    .site-header:hover {
+      background-color: rgb(245, 245, 245, 1);
+      transition: all 0.5s ease;
+      /* background-color: #F5F5F5 ; */
+    }
+
+    .Menu a {
+      text-decoration: none;
+    }
+
+    .visible {
+      display: none;
+      opacity: 0;
+    }
+
+
+    .popup__container {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 20px;
+      height: 270px;
+      max-width: 500px;
+      min-width: 400px;
+    }
+
+    .popup__containerInfo {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      /* transform: translate(0%, -50%); */
+      background: #fff;
+      /* border-radius: 0px; */
+      height: 100%;
+      /* border: 1px solid #000; */
+      /* border-top: 7px solid #3468F0; */
+      text-align: left;
+      max-width: 470px;
+    }
+
+    .popup__containerInfo input,
+    .popup__containerInfo button {
+      border-radius: 20px;
+    }
+
+    .popup__wrapper {
+      padding: 40px;
+    }
+
+
+    .popup__send,
+    .popup__call {
+      width: 100%;
+      color: #fff;
+      background-color: #FF6912;
+      border: 1px solid #FF6912;
+      padding: 15px 0px;
+      border-radius: 0px;
+    }
+
+
+    .popup__send:hover,
+    .popup__call:hover {
+      /* Пробуй разное */
+      /* border: none; */
+      color: #FE7030;
+      background-color: #fff;
+    }
+
+    .visible {
+      display: none;
+    }
+
+
+    .popup3 {
+      position: fixed;
+      width: 100%;
+      z-index: 222;
+      /* height: 100%; */
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 1.5s ease;
+    }
+
+
+
+    .popup,
+    .popup2 {
+      position: fixed;
+      width: 100%;
+      z-index: 222;
+      height: 100%;
+      transition: all 1.5s ease;
+
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    @media only screen and (max-device-width: 800px) {
+      .popupBuy {
+        /* background: #fff; */
+        position: fixed;
+        width: 100%;
+        z-index: 222;
+        /* height: 100%; */
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 1.5s ease;
+      }
+
+      .popup__containerInfo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 20px;
+        height: 500px;
+        max-width: 500px;
+        min-width: 400px;
+      }
+    }
+
+    nav .accordion-body i {
+      position: fixed;
+      top: 75px;
+      right: 5rem;
+    }
+
+    .accordion-body .navbar-collapse-item_mail i {
+      top: 78px;
+      position: fixed;
+      right: 7.5rem;
+      /* margin-left: -5px; */
+    }
+
+    /* эффект плавного появления  */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    #logo {
+      color: #05282D;
+font-family: 'Courier New', Courier, monospace;
+      font-size: 2.4rem;
+    }
+  </style>
+
+  <div class="sticky-top site-header">
+
+    <nav class="  navbar navbar-expand-lg navbar-light">
+      <div class="container" style="color: #000">
+        <div class="row">
+          <div class=" logotype">
+            <a id="logo" class="navbar-brand col-4 col-sm-7 col-md-4 " href="{% url 'home' %}">
+              zooWorld
+            </a>
+          </div>
+        </div>
+        <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item header__menu-item">
+              <a class="nav-link " href="{% url 'animals' %}">Животные</a>
+            </li>
+            <li class="nav-item header__menu-item">
+              <a class="nav-link " href="{% url 'tickets' %}">Билеты</a>
+            </li>
+            <!-- <li class="nav-item ">
+                          <button class="btn btnKlient header__button_color-white" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem;border: 1px solid #5080C1;color: #fff;background-color: #5080C1;box-shadow: 0px 0px 20px rgba(18, 121, 255, 0.6)">Связаться</button>
+                        </li> -->
+          </ul>
+        </div>
+        <span class="nav-item ">
+          <a href="mailto:urkabestyzhev@gmail.com?subject=Письмо с сайта&body=Здравствуйте!" target="_blank"
+            class="contacts__item-text contacts__item-text_link navbar-collapse-item navbar-collapse-item_mail">
+            <i style="float: left;color: #2d7ef7; margin: 11px 5px 0px 5px;" class="gg-mail"></i>
+          </a>
+
+          <!-- <button class=" btnKlient header__button_color-white" type="submit" style="padding: 10px; border-radius: 15px; margin-right: 1rem;border: 1px solid #5080C1;color: #fff;background-color: #5080C1;box-shadow: 0px 0px 20px rgba(18, 121, 255, 0.6)">Связаться</button> -->
+          <button class="navbar-toggler first-button" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarToggleExternalContent9" aria-controls="navbarToggleExternalContent9"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon1"><span></span><span></span><span></span></div>
+          </button>
+          <!-- <span style="cursor:pointer;" class="navbar-toggler-icon"></span> -->
+        </span>
+      
+
+      </div>
+    </nav>
+
+    <div class="container " style="text-align: center;">
+      <div class="mx-auto">
+        <div class="collapse" id="navbarToggleExternalContent9">
+          <a class="header__menu-item-collapse " style="margin-bottom: 5px;" href="{% url 'animals' %}">Животные</a>
+          <a class="header__menu-item-collapse " style="margin-bottom: 5px;" href="{% url 'tickets' %}">Билеты</a>
+          <br>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer role="contentinfo" class="footer layout__footer">
+    <div class="inner footer__inner">zooWorld <br> Мы вас ждём!</div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://snipp.ru/cdn/selectize.js/0.12.6/dist/css/selectize.default.css">
+  <script src="https://snipp.ru/cdn/microplugin.js/src/microplugin.js"></script>
+  <script src="https://snipp.ru/cdn/sifter.js/sifter.min.js"></script>
+  <script src="https://snipp.ru/cdn/selectize.js/0.12.6/dist/js/selectize.min.js"></script>
+  <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.10.0/lodash.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script>
+    // const linksNav = document.getElementById('#');
+
+    document.querySelector('.first-button').addEventListener('click', function () {
+      if (Array.from(document.getElementById('navbarToggleExternalContent9').classList).includes("collapse") == true) {
+        document.getElementById('navbarToggleExternalContent9').classList.remove('collapse');
+      } else {
+        document.getElementById('navbarToggleExternalContent9').classList.add('collapse');
+      }
+
+      document.querySelector('.animated-icon1').classList.toggle('open');
+    });
+    const popup = document.querySelector('.popup');
+    const popup2 = document.querySelector('.popup2');
+    const popupBuy = document.querySelector('.popupBuy');
+    const popupBuy2 = document.querySelector('.popupBuy2');
+    const deleteForm = document.querySelector('.delete');
+    const headerButton = document.querySelector('.header__button_color-white');
+    const accordionBody = document.querySelector('nav .accordion-body');
+    $(document).on('click', function (e) {
+      $('<div class="cursor">')
+        .css({
+          top: e.clientY,
+          left: e.clientX
+        })
+        .appendTo($(document.body))
+        .on('animationend webkitAnimationEnd', function (e) {
+          $(this).remove();
+        });
+    });
+
+    // headerButton.addEventListener('click', () => {
+    //   if (Array.from(accordionBody.classList).includes("visible") == true) {
+    //     accordionBody.classList.remove('visible');
+    //   } else {
+    //     accordionBody.classList.add('visible');
+    //   }
+
+    // });
+  </script>
+  <!-- <script src="{% static '/EtalonSite/js/paralax.js' %}"></script> -->
+
+</body>
+
+</html>

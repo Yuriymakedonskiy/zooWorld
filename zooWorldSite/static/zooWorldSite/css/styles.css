@@ -1,0 +1,63 @@
+:root {
+    --primary-color: rgb(213, 247, 20);
+    --size: 48px;
+}
+
+fieldset {
+    padding-top: 15px;
+    /* float: left; */
+}
+textarea, input{
+    color: #000;
+} 
+legend {
+    padding-inline: 0.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Hide label */
+label {
+    width: 0;
+    overflow: hidden;
+}
+
+/* You can style inputs directly thanks to appearance:none! */
+.radioChecked {
+    appearance: none;
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    cursor: pointer;
+
+    &::after {
+        content: "☆";
+        font-size: calc(var(--size) * 3 / 4);
+        line-height: var(--size);
+        color: var(--primary-color);
+    }
+
+    &:is(:checked, :hover)::after,
+    &:has(~ input:is(:checked, :hover))::after {
+        content: "★";
+    }
+
+    &:hover~input::after {
+        content: "☆";
+    }
+}
+.radioNoChecked {
+    appearance: none;
+    /* width: 125px;
+    height: 25px; */
+    /* text-align: center; */
+
+    &::before {
+        content: "★";
+        font-size: calc(var(--size) * 2.4 / 4);
+        line-height: var(--size);
+        color: var(--primary-color);
+    }
+
+   
+}
